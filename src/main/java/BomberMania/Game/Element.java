@@ -1,6 +1,6 @@
 package BomberMania.Game;
 
-import BomberMania.Model.Position;
+import testsModel.Position;
 
 public abstract class Element {
     private Position position;

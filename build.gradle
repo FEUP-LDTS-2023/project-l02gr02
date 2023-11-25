@@ -2,10 +2,10 @@ plugins {
     id 'java'
     id 'application'
     id 'info.solidsoft.pitest' version '1.6.0'
-    id "org.kordamp.gradle.errorprone" version "0.47.0"
+    id "org.kordamp.gradle.errorprone" version "0.50.0"
 }
 
-group = 'org.example'
+group = 'BomberMania'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -26,7 +26,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("Application")
+    mainClass.set("BomberMania.Application")
 }
 
 test {

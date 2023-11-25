@@ -1,4 +1,4 @@
-package BomberMania.Model;
+package testsModel;
 
 public class Position {
     private int x;
