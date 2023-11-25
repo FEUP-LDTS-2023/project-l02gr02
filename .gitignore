@@ -48,6 +48,5 @@ out/
 build/
 *.iml/
 .jqwik-database
-gradle/
 gradlew.bat
 gradlew
