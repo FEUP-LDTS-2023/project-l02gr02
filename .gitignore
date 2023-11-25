@@ -46,4 +46,8 @@ bin/
 .gradle/
 out/
 build/
-*.iml
+*.iml/
+.jqwik-database
+gradle/
+gradlew.bat
+gradlew
