@@ -21,4 +21,6 @@ public class ArenaViewerTest {
         arena.setPlayableCharacter(new PlayableCharacter(5, 8, new BombInfo()));
     }
 
+    //  TO DO:
+    //  -  Need to implement the test, but we need to create the Game viewer to test it
 }

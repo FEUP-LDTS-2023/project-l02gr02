@@ -1,5 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
+import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 
 import java.io.BufferedReader;
@@ -48,7 +49,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'H') return new PlayableCharacter(x, y);
+                if (line.charAt(x) == 'H') return new PlayableCharacter(x, y, new BombInfo());
         }
         return null;
     }
