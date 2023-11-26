@@ -22,9 +22,11 @@ public class MenuController extends Controller<Menu> {
                 getModel().nextEntry();
                 break;
             case SELECT:
+                if (getModel().isSelectedExit()) game.setState(null);
+                if (getModel().isSelectedStart()) game.setState(null);
                 break;
-                //if (getModel().isSelectedExit()) game.setState(null);
-                //if (getModel().isSelectedStart()) game.setState(null);
+            default:
+                break;
         }
     }
 }
