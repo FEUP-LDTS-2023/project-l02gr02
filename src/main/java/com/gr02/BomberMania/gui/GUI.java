@@ -8,6 +8,8 @@ import java.io.IOException;
 public interface GUI {
     ACTION getNextAction() throws IOException;
 
+    void drawPlayableCharacter(Position position);
+
     void drawText(Position position, String text, String color);
 
     void clear();

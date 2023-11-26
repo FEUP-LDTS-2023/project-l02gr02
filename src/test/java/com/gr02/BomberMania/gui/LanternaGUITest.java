@@ -25,6 +25,14 @@ class LanternaGUITest {
     }
 
     @Test
+    void drawPlayableCharacter() {
+        gui.drawPlayableCharacter(new Position(1, 1));
+
+        Mockito.verify(tg, Mockito.times(1)).setForegroundColor(new TextColor.RGB(255, 215, 0));
+        Mockito.verify(tg, Mockito.times(1)).putString(1, 2, "H");
+    }
+
+    @Test
     void drawText() {
         gui.drawText(new Position(1, 1), "Hello World", "#336699");
 
