@@ -1,4 +1,4 @@
-package com.gr02.BomberMania.game;
+package com.gr02.BomberMania.model.Game;
 
 import com.gr02.BomberMania.model.Position;
 
@@ -16,4 +16,5 @@ public abstract class Element {
     public void setPosition(Position position) {
         this.position = position;
     }
+
 }

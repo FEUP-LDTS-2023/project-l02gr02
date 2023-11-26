@@ -10,6 +10,10 @@ public interface GUI {
 
     void drawText(Position position, String text, String color);
 
+    void drawIndestructibleWall(Position position);
+
+    void drawBrickWall(Position position);
+
     void clear();
 
     void refresh() throws IOException;
