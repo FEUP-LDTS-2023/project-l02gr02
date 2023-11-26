@@ -5,7 +5,6 @@ import com.gr02.BomberMania.gui.GUI;
 import java.io.IOException;
 
 public abstract class Viewer<T> {
-
     private final T model;
 
     public Viewer(T model) {
@@ -15,7 +14,7 @@ public abstract class Viewer<T> {
     public T getModel() {
         return model;
     }
-    
+
     public void draw(GUI gui) throws IOException {
         gui.clear();
         drawElements(gui);

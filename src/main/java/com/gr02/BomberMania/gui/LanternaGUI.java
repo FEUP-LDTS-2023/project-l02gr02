@@ -105,6 +105,22 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawIndestructibleWall(Position position) {
+        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+    }
+
+    @Override
+    public void drawBrickWall(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'B', "#3333FF");
+    }
+
+    private void drawCharacter(int x, int y, char c, String color) {
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setForegroundColor(TextColor.Factory.fromString(color));
+        tg.putString(x, y + 1, "" + c);
+    }
+
+    @Override
     public void clear() {
         screen.clear();
     }
