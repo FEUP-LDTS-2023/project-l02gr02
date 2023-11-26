@@ -20,7 +20,12 @@
 
 ### PLANNED FEATURES
 
-> Instead of screenshots you should include GUI mock-ups for the planned features.
+- Placing bombs:
+
+- Die for bomb explosion:
+
+- Throw bombs:
+  
 - 2-Player Mode - Engage in a head-to-head gameplay with a friend.
 - Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
 - Portal - Transports the hero and triggered bombs to another location.
@@ -29,6 +34,7 @@
 - Chain Reaction Bomb - Spawn additional bombs upon explosion.
 - Directional Explosion Bomb - Explodes in the same direction it is placed.
 - Select map - Allows the player to choose between multiple maps.
+
 
 ### DESIGN XXXXXXXXXXXXXXXXXXXXXXXX
 
