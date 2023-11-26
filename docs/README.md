@@ -62,6 +62,12 @@ The following figure shows how the pattern’s roles were mapped to the applicat
 
 ![img](imgs/gameLoopPattern.png)
 
+**Consequences**
+
+- Regulates frame rate for a consistent experience across different hardware.
+- Allows continuous updating of the game state, facilitating dynamic and evolving gameplay.
+- Enhances code clarity and maintainability by streamlining the logic and reducing clutter within the module classes.
+
 #### INPUT SHOULD BEHAVE DIFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
 
 **Problem in Context**
