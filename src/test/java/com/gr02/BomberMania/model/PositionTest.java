@@ -5,7 +5,7 @@ import net.jqwik.api.Property;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PositionTEST {
+class PositionTest {
 
     @Property
     void getLeft(@ForAll int x, @ForAll int y) {
