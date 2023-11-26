@@ -19,11 +19,10 @@ public class PlayableCharacterViewerTest {
         viewer = new PlayableCharacterViewer();
         gui = Mockito.mock(GUI.class);
     }
-    /*
+
     @Test
     void drawElement() {
         viewer.draw(playableCharacter, gui);
-        Mockito.verify(gui, Mockito.times(1).drawPlayableCharacter(playableCharacter.getPosition()));
+        Mockito.verify(gui, Mockito.times(1)).drawPlayableCharacter(playableCharacter.getPosition());
     }
-    */
 }
