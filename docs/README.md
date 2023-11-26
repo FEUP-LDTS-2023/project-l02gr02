@@ -34,9 +34,9 @@
 
 >VER O EXEMPLO NO TEMPLATE
 
-#### KNOWN CODE SMELLS XXXXXXXXXXXXXXX
+#### KNOWN CODE SMELLS
 
-> This section should describe 3 to 5 different code smells that you have identified in your current implementation.
+In our development process, we actively utilized the "errorprone" plugin to detect known code smells as we progressed with the project. This tool served as a valuable aid in identifying and addressing common issues, allowing us to maintain a high level of code quality. By leveraging the errorprone plugin, we proactively identified potential code smells, fostering a more robust and maintainable codebase throughout the development lifecycle. This comprehensive approach has ensured that, as a result, our codebase is free from known code smells.
 
 ### TESTING
 
