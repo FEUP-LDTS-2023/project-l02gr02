@@ -2,7 +2,7 @@
 
 > BomberMania is a thrilling 2-player game where the goal is to outsmart and blast your friends with bombs for victory. Unleash superpowers to upgrade your bombs, adding an extra layer of strategy to the explosive mayhem
 
-> This project was made by Luís Arruda (up202206970@up.pt), Afonso Machado (up202207611@up.pt) and Guilherme Coelho (up202000141@up.pt) for LDTS 2023/2024
+> This project was made by Afonso Machado (up202207611@up.pt), Guilherme Coelho (up202000141@up.pt) and Luís Arruda (up202206970@up.pt) for LDTS 2023/2024
 
 ### IMPLEMENTED FEATURES XXXXXXXXXXXXXXXXXX
 
@@ -38,13 +38,15 @@
 
 > This section should describe 3 to 5 different code smells that you have identified in your current implementation.
 
-### TESTING XXXXXXXXXXX
+### TESTING
 
-- Screenshot of coverage report.
-- Link to mutation testing report.
+The testing strategy for "BomberMania" primarily relied on unit testing, leveraging JUnit and Jqwik to validate individual components.
+The approach emphasized Property Based Testing, systematically validating functions across diverse inputs. 
+Additionally, Mocks were strategically used in draw methods to confirm executions. 
+This focused strategy aimed to deliver a robust test suite, showcasing the team's commitment to thorough validation and ensuring the resilience of the codebase.
 
 ### SELF-EVALUATION
 
-- Luís Arruda: 1/3
 - Afonso Machado: 1/3
 - Guilherme Coelho: 1/3
+- Luís Arruda: 1/3
