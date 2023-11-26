@@ -42,7 +42,21 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 ### DESIGN
 
->VER O EXEMPLO NO TEMPLATE
+#### Separate the advancement of in-game time from both user input and processor speed.
+
+**Problem in Context**
+
+In BomberMania, multiple players, bombs, and power-ups coexist in the game world, and they need to interact seamlessly. For instance, managing the timing of bomb explosions, resolving collisions between players and obstacles, and handling the dynamic movement of both playersrequire careful synchronization. 
+
+**The Pattern**
+
+We have applied the **Game Loop** pattern. A game loop operates continuously throughout gameplay. With each iteration, it handles user input without causing delays, updates the game state, and renders the current game frame. It also keeps track of time to regulate the pace of gameplay.
+
+**Implementation**
+
+The following figure shows how the pattern’s roles were mapped to the application classes.
+
+![Screenshot_from_2023-11-26_23-41-08](https://github.com/FEUP-LDTS-2023/project-l02gr02/assets/145804792/f90edeb6-eaa3-48a1-8905-df37068fbfc1)
 
 #### KNOWN CODE SMELLS
 
