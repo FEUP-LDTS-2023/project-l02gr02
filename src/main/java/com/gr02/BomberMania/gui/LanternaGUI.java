@@ -114,12 +114,6 @@ public class LanternaGUI implements GUI {
         drawCharacter(position.getX(), position.getY(), 'B', "#3333FF");
     }
 
-    private void drawCharacter(int x, int y, char c, String color) {
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setForegroundColor(TextColor.Factory.fromString(color));
-        tg.putString(x, y + 1, "" + c);
-    }
-
     @Override
     public void clear() {
         screen.clear();

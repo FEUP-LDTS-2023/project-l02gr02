@@ -1,5 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
+import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 
 import java.util.Random;
@@ -29,6 +30,6 @@ public class RandomArenaBuilder extends ArenaBuilder {
 
     @Override
     protected PlayableCharacter createPlayableCharacter() {
-        return new PlayableCharacter(width / 2, height / 2);
+        return new PlayableCharacter(width / 2, height / 2, new BombInfo());
     }
 }
