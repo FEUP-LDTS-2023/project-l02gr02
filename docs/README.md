@@ -42,11 +42,15 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 ### DESIGN
 
+Overview of classes interactions: 
+
+![img](imgs/classDiagram.png)
+
 #### Separate the advancement of in-game time from both user input and processor speed.
 
 **Problem in Context**
 
-In BomberMania, multiple players, bombs, and power-ups coexist in the game world, and they need to interact seamlessly. For instance, managing the timing of bomb explosions, resolving collisions between players and obstacles, and handling the dynamic movement of both playersrequire careful synchronization. 
+In BomberMania, multiple players, bombs, and power-ups coexist in the game world, and they need to interact seamlessly. For instance, managing the timing of bomb explosions, resolving collisions between players and obstacles, and handling the dynamic movement of both players require careful synchronization. 
 
 **The Pattern**
 
@@ -56,7 +60,28 @@ We have applied the **Game Loop** pattern. A game loop operates continuously thr
 
 The following figure shows how the pattern’s roles were mapped to the application classes.
 
-![Screenshot_from_2023-11-26_23-41-08](https://github.com/FEUP-LDTS-2023/project-l02gr02/assets/145804792/f90edeb6-eaa3-48a1-8905-df37068fbfc1)
+![img](imgs/gameLoopPattern.png)
+
+#### INPUT SHOULD BEHAVE DIFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
+
+Problem in Context
+To ensure the proper response from the input taking into account the different situations the naive aproach would use scattered conditional logic which would inevitably violate the Single Responsability Principle.
+
+The Pattern
+We have resorted to the State pattern. This pattern allows us to delegate the choice of the proper response to the subclasses, therefore organizing our code in a way that is more managable and that respects the principle previously being violated.
+
+Implementation
+
+The following figure shows how the pattern’s roles were mapped to the application classes.
+
+![img](imgs/statePattern.png)
+
+Consequences
+
+The use of the State Pattern in the current design allows the following benefits:
+
+It provide a systematic and loosely coupled way to to change the behavior of an object based on its state.
+It becomes easier to add new states if nedeed.
 
 #### KNOWN CODE SMELLS
 
