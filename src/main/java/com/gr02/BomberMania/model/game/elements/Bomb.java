@@ -6,4 +6,8 @@ public class Bomb extends Element {
         super(x, y);
         this.bombInfo = bombInfo;
     }
+
+    public BombInfo getBombInfo() {
+        return bombInfo;
+    }
 }

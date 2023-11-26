@@ -2,11 +2,24 @@ package com.gr02.BomberMania.model.game.elements;
 
 public class BombInfo {
 
-    public int timer;
-    public int explosion_radius;
+    private int timer;
+    private int explosionRadius;
 
-    public BombInfo(int timer, int explosion_radius) {
+    public BombInfo(int timer, int explosionRadius) {
         this.timer = timer;
-        this.explosion_radius = explosion_radius;
+        this.explosionRadius = explosionRadius;
+    }
+
+    public BombInfo() {
+        this.timer = 5;
+        this.explosionRadius = 3;
+    }
+
+    public int getTimer() {
+        return timer;
+    }
+
+    public int getExplosionRadius() {
+        return explosionRadius;
     }
 }

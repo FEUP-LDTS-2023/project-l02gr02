@@ -16,7 +16,7 @@ public class BombViewerTest {
 
     @BeforeEach
     void setUp() {
-        bomb = new Bomb(10, 10, new BombInfo(5, 3));
+        bomb = new Bomb(10, 10, new BombInfo());
         viewer = new BombViewer();
         gui = Mockito.mock(GUI.class);
     }

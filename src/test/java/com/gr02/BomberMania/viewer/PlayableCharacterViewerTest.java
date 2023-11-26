@@ -1,6 +1,7 @@
 package com.gr02.BomberMania.viewer;
 
 import com.gr02.BomberMania.gui.GUI;
+import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import com.gr02.BomberMania.viewer.game.PlayableCharacterViewer;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +16,7 @@ public class PlayableCharacterViewerTest {
 
     @BeforeEach
     void setUp() {
-        playableCharacter = new PlayableCharacter(10, 10);
+        playableCharacter = new PlayableCharacter(10, 10, new BombInfo());
         viewer = new PlayableCharacterViewer();
         gui = Mockito.mock(GUI.class);
     }
