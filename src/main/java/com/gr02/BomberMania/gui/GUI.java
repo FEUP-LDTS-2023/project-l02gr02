@@ -18,5 +18,7 @@ public interface GUI {
 
     void close() throws IOException;
 
+    void drawBomb(Position position);
+
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
 }
