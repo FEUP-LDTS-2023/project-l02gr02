@@ -1,9 +1,7 @@
-package testsModel;
+package com.gr02.BomberMania.model;
 
-import BomberMania.model.Position;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,7 +9,7 @@ class PositionTEST {
 
     @Property
     void getLeft(@ForAll int x, @ForAll int y) {
-        Assertions.assertEquals(x - 1, new Position(x, y).getLeft().getX());
+        assertEquals(x - 1, new Position(x, y).getLeft().getX());
         assertEquals(y, new Position(x, y).getLeft().getY());
     }
 

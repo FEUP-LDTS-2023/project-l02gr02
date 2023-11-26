@@ -1,8 +1,7 @@
-package testsGui;
+package com.gr02.BomberMania.gui;
 
 
-import BomberMania.gui.LanternaGUI;
-import BomberMania.model.Position;
+import com.gr02.BomberMania.model.Position;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;

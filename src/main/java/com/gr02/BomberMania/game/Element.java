@@ -1,6 +1,6 @@
-package BomberMania.game;
+package com.gr02.BomberMania.game;
 
-import BomberMania.model.Position;
+import com.gr02.BomberMania.model.Position;
 
 public abstract class Element {
     private Position position;

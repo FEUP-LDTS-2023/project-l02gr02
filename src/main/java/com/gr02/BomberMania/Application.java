@@ -1,4 +1,4 @@
-package BomberMania;
+package com.gr02.BomberMania;
 
 public class Application {
     public static void main(String args[]) {

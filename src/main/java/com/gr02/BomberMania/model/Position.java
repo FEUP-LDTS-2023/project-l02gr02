@@ -1,4 +1,4 @@
-package BomberMania.model;
+package com.gr02.BomberMania.model;
 
 import java.util.Objects;
 
