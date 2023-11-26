@@ -42,7 +42,7 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 ### DESIGN
 
-Overview of classes interactions: 
+Overview of class interactions: 
 
 ![img](imgs/classDiagram.png)
 
@@ -64,24 +64,50 @@ The following figure shows how the pattern’s roles were mapped to the applicat
 
 #### INPUT SHOULD BEHAVE DIFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
 
-Problem in Context
+**Problem in Context**
 To ensure the proper response from the input taking into account the different situations the naive aproach would use scattered conditional logic which would inevitably violate the Single Responsability Principle.
 
-The Pattern
+**The Pattern**
+
 We have resorted to the State pattern. This pattern allows us to delegate the choice of the proper response to the subclasses, therefore organizing our code in a way that is more managable and that respects the principle previously being violated.
 
-Implementation
+**Implementation**
 
 The following figure shows how the pattern’s roles were mapped to the application classes.
 
 ![img](imgs/statePattern.png)
 
-Consequences
+**Consequences**
 
 The use of the State Pattern in the current design allows the following benefits:
 
-It provide a systematic and loosely coupled way to to change the behavior of an object based on its state.
-It becomes easier to add new states if nedeed.
+. It provide a systematic and loosely coupled way to to change the behavior of an object based on its state.
+- It becomes easier to add new states if nedeed.
+
+ #### State should not be concerned with wich Viewer and Controller it is created
+
+**Problem in Context**
+
+The State and MenuState codes demonstrates the need to create specific instances of related objects, such as Viewers and Controllers, in different game states(represented by the State class). However, the exact choice of which Viewer and Controller implementation to use is delegated to the subclasses of State. This can make the code more complex and harder to maintain, especially if new states are added in the future.
+
+**The Pattern**
+
+The chosen pattern to address this issue is the Factory Pattern. The Factory Pattern is a creational design pattern that provides an interface for creating instances of a class but allows subclasses to alter the type of objects that will be created. It involves creating an interface or abstract class for object creation (the factory) and subclasses that implement this interface to create specific instances of objects.
+
+**Implementation**
+
+The following figure shows how the pattern’s roles were mapped to the states classes.
+
+![img](imgs/factoryPattern.png)
+
+**Consequences**
+
+The use of the State Pattern in the current design allows the following benefits:
+
+- It simplifies the logic within the state classes, removing the need to create specific instances of objects.
+- Promotes cleaner and more maintainable code.
+- Facilitates code extension to add new states since the object creation logic is encapsulated in the factories and can be extended without modifying existing state classes.
+- The downside is that the code may become longer due to the introduction of additional classes for the factories. Nevertheless, the maintenance and extensibility benefits typically outweigh this drawback.
 
 #### KNOWN CODE SMELLS
 
