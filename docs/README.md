@@ -1,42 +1,46 @@
 ## LDTS_T02_G02 - BomberMania
 
-> BomberMania is a thrilling 2-player game where the goal is to outsmart and blast your friends with bombs for victory. Unleash superpowers to upgrade your bombs, adding an extra layer of strategy to the explosive mayhem
+BomberMania is a thrilling 2-player game where the goal is to outsmart and blast your friends with bombs for victory. Unleash superpowers to upgrade your bombs, adding an extra layer of strategy to the explosive mayhem
 
 > This project was made by Afonso Machado (up202207611@up.pt), Guilherme Coelho (up202000141@up.pt) and Luís Arruda (up202206970@up.pt) for LDTS 2023/2024
 
-### IMPLEMENTED FEATURES XXXXXXXXXXXXXXXXXX
+### IMPLEMENTED FEATURES
 
-> Include two or three screenshots that illustrate the most important features.
 #### Main Menu
->This section is in regard to the menu the player sees and interacts with when he starts up the game.
 - Start Game - Allows the player to start the game.
 - Exit - Closes the game.
+
+![img](gifs/menu.gif)
+
+### PLANNED FEATURES
+
+- Placing bombs:
+  
+![img](gifs/drop.gif)
+
+- Death for bomb explosion:
+  
+![img](gifs/death.gif)
+
+- Breaking wall with bombs (explosion trail stops in unbreakable walls):
+  
+![img](gifs/breakingWall.gif)
+
+- 2-Player Mode - Engage in a head-to-head gameplay with a friend.
+- Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
+- Portal - Transports the hero and triggered bombs to another location.
+- Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact.
+- Chain Reaction Bomb - Imediatlly explodes a nearly bomb
+- Directional Explosion Bomb - Explodes in the same direction it is placed.
+- Select map - Allows the player to choose between multiple maps.
+
 #### Core Game
->This section details the features of the core gameplay.
 - Health - The player's hit points, enables the player to take damage, and on reaching 0, finishes the game.
 - Bomb - Enables the player to deploy explosive devices strategically.
 - Collision - Ensures the player cannot pass through undesired elements within the game environment.
 - Movement - Allows the player to move the hero character.
 
-### PLANNED FEATURES
-
-- Placing bombs:
-
-- Die for bomb explosion:
-
-- Throw bombs:
-  
-- 2-Player Mode - Engage in a head-to-head gameplay with a friend.
-- Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
-- Portal - Transports the hero and triggered bombs to another location.
-- Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact.
-- Fire-Trail Bomb - Lay down fiery trails on the ground.
-- Chain Reaction Bomb - Spawn additional bombs upon explosion.
-- Directional Explosion Bomb - Explodes in the same direction it is placed.
-- Select map - Allows the player to choose between multiple maps.
-
-
-### DESIGN XXXXXXXXXXXXXXXXXXXXXXXX
+### DESIGN
 
 >VER O EXEMPLO NO TEMPLATE
 
