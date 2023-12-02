@@ -1,9 +1,9 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.elements.BrickWall;
-import com.gr02.BomberMania.model.game.elements.IndestructibleWall;
-import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
-import com.gr02.BomberMania.model.game.elements.Wall;
+import com.gr02.BomberMania.model.game.BrickWall;
+import com.gr02.BomberMania.model.game.IndestructibleWall;
+import com.gr02.BomberMania.model.game.PlayableCharacter;
+import com.gr02.BomberMania.model.game.Wall;
 import com.gr02.BomberMania.model.Position;
 
 import java.util.List;
@@ -66,7 +66,7 @@ public class Arena {
         return Player2;
     }
 
-    public void setPlayer2(PlayableCharacter player2) {
-        this.Player2 = player2;
+    public void setPlayer2(PlayableCharacter player) {
+        this.Player2 = player;
     }
 }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class menuTest {
+public class MenuTest {
     @Test
     public void nextEntry() {
         Menu menu = new Menu();

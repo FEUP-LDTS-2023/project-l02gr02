@@ -1,4 +1,4 @@
-package com.gr02.BomberMania.model.game.elements;
+package com.gr02.BomberMania.model.game;
 
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;

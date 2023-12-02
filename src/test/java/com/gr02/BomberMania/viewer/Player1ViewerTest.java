@@ -4,26 +4,24 @@ import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.BombInfo;
 import com.gr02.BomberMania.model.game.PlayableCharacter;
 import com.gr02.BomberMania.viewer.game.Player1Viewer;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class PlayableCharacterViewerTest {
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
 
+public class Player1ViewerTest {
     private PlayableCharacter playableCharacter;
-    private Player1Viewer viewer;
-    private GUI gui;
-
-    @BeforeEach
-    void setUp() {
-        playableCharacter = new PlayableCharacter(10, 10, new BombInfo());
-        viewer = new Player1Viewer();
-        gui = Mockito.mock(GUI.class);
-    }
-
     @Test
-    void drawElement() {
-        viewer.draw(playableCharacter, gui);
-        Mockito.verify(gui, Mockito.times(1)).drawPlayer1(playableCharacter.getPosition());
+    public void testDraw() {
+        GUI gui = mock(GUI.class);
+
+        playableCharacter = new PlayableCharacter(10, 10, new BombInfo());
+
+        Player1Viewer player1Viewer = new Player1Viewer();
+
+        player1Viewer.draw(playableCharacter, gui);
+
+        Mockito.verify(gui).drawPlayer1(eq(playableCharacter.getPosition()));
     }
 }
