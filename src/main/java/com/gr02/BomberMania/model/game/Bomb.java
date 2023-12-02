@@ -1,4 +1,4 @@
-package com.gr02.BomberMania.model.game.elements;
+package com.gr02.BomberMania.model.game;
 
 public class Bomb extends Element {
     private BombInfo bombInfo;

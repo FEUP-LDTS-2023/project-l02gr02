@@ -1,7 +1,7 @@
 package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.elements.Bomb;
+import com.gr02.BomberMania.model.game.Bomb;
 
 public class BombViewer implements ElementViewer<Bomb> {
     @Override
