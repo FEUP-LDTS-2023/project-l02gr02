@@ -24,5 +24,5 @@ public interface GUI {
 
     void drawBomb(Position position);
 
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, BACKTOMENU, SELECT}
 }

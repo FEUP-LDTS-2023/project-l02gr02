@@ -3,6 +3,8 @@ package com.gr02.BomberMania.model.game.arena;
 import com.gr02.BomberMania.model.game.elements.BrickWall;
 import com.gr02.BomberMania.model.game.elements.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.Wall;
+import com.gr02.BomberMania.model.Position;
 
 import java.util.List;
 
@@ -48,5 +50,14 @@ public class Arena {
 
     public void setBrickWalls(List<BrickWall> brickWalls) {
         BrickWalls = brickWalls;
+    }
+    public boolean isEmpty(Position position) {
+        for (Wall wall : BrickWalls)
+            if (wall.getPosition().equals(position))
+                return false;
+        for (Wall wall : IndestructibleWalls)
+            if (wall.getPosition().equals(position))
+                return false;
+        return true;
     }
 }
