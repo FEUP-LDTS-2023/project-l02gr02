@@ -68,7 +68,6 @@ public class LanternaGUI implements GUI {
         KeyStroke keyStroke = screen.pollInput();
         if (keyStroke == null) return ACTION.NONE;
 
-        //if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
         if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.BACKTOMENU;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
@@ -76,14 +75,24 @@ public class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
 
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'w') return ACTION.UP2;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'd') return ACTION.RIGHT2;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 's') return ACTION.DOWN2;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'a') return ACTION.LEFT2;
+
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
 
         return ACTION.NONE;
     }
 
     @Override
-    public void drawPlayableCharacter(Position position) {
+    public void drawPlayer1(Position position) {
         drawCharacter(position.getX(), position.getY(), 'H', "#FFD700");
+    }
+
+    @Override
+    public void drawPlayer2(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'F', "#FFD700");
     }
 
     @Override

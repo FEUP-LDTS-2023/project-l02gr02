@@ -11,7 +11,8 @@ import java.util.List;
 public class Arena {
     private final int height;
     private final int width;
-    private PlayableCharacter playableCharacter;
+    private PlayableCharacter Player1;
+    private PlayableCharacter Player2;
     private List<IndestructibleWall> IndestructibleWalls;
     private List<BrickWall> BrickWalls;
 
@@ -28,12 +29,12 @@ public class Arena {
         return height;
     }
 
-    public PlayableCharacter getPlayableCharacter() {
-        return playableCharacter;
+    public PlayableCharacter getPlayer1() {
+        return Player1;
     }
 
-    public void setPlayableCharacter(PlayableCharacter playableCharacter) {
-        this.playableCharacter = playableCharacter;
+    public void setPlayer1(PlayableCharacter player1) {
+        this.Player1 = player1;
     }
 
     public List<IndestructibleWall> getIndestructibleWalls() {
@@ -59,5 +60,13 @@ public class Arena {
             if (wall.getPosition().equals(position))
                 return false;
         return true;
+    }
+
+    public PlayableCharacter getPlayer2() {
+        return Player2;
+    }
+
+    public void setPlayer2(PlayableCharacter player2) {
+        this.Player2 = player2;
     }
 }
