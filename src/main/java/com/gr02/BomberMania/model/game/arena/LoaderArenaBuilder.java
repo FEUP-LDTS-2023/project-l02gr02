@@ -1,6 +1,8 @@
 package com.gr02.BomberMania.model.game.arena;
 
 import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.BrickWall;
+import com.gr02.BomberMania.model.game.elements.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 
 import java.io.BufferedReader;
@@ -12,13 +14,10 @@ import java.util.List;
 
 public class LoaderArenaBuilder extends ArenaBuilder {
 
-    private final int level;
     private final List<String> lines;
 
-    public LoaderArenaBuilder(int level) throws IOException {
-        this.level = level;
-
-        URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
+    public LoaderArenaBuilder() throws IOException {
+        URL resource = LoaderArenaBuilder.class.getResource("/levels/mapa");
         BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
 
         lines = readLines(br);
@@ -52,5 +51,30 @@ public class LoaderArenaBuilder extends ArenaBuilder {
                 if (line.charAt(x) == 'H') return new PlayableCharacter(x, y, new BombInfo());
         }
         return null;
+    }
+    @Override
+    protected List<IndestructibleWall> createIndestructibleWalls() {
+        List<IndestructibleWall> walls = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == '#') walls.add(new IndestructibleWall(x, y));
+        }
+
+        return walls;
+    }
+
+    @Override
+    protected List<BrickWall> createBrickWalls() {
+        List<BrickWall> walls = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == 'B') walls.add(new BrickWall(x, y));
+        }
+
+        return walls;
     }
 }

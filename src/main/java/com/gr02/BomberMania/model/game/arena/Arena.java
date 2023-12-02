@@ -1,11 +1,17 @@
 package com.gr02.BomberMania.model.game.arena;
 
+import com.gr02.BomberMania.model.game.elements.BrickWall;
+import com.gr02.BomberMania.model.game.elements.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+
+import java.util.List;
 
 public class Arena {
     private final int height;
     private final int width;
     private PlayableCharacter playableCharacter;
+    private List<IndestructibleWall> IndestructibleWalls;
+    private List<BrickWall> BrickWalls;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -26,5 +32,21 @@ public class Arena {
 
     public void setPlayableCharacter(PlayableCharacter playableCharacter) {
         this.playableCharacter = playableCharacter;
+    }
+
+    public List<IndestructibleWall> getIndestructibleWalls() {
+        return IndestructibleWalls;
+    }
+
+    public void setIndestructibleWalls(List<IndestructibleWall> indestructibleWalls) {
+        IndestructibleWalls = indestructibleWalls;
+    }
+
+    public List<BrickWall> getBrickWalls() {
+        return BrickWalls;
+    }
+
+    public void setBrickWalls(List<BrickWall> brickWalls) {
+        BrickWalls = brickWalls;
     }
 }
