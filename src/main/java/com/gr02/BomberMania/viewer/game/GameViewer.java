@@ -2,7 +2,6 @@ package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.game.elements.BrickWall;
 import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.viewer.Viewer;
 
@@ -17,7 +16,8 @@ public class GameViewer extends Viewer<Arena> {
     public void drawElements(GUI gui) {
         drawElements(gui, getModel().getIndestructibleWalls(), new IndestructibleWallViewer());
         drawElements(gui, getModel().getBrickWalls(), new BrickViewer());
-        drawElement(gui, getModel().getPlayableCharacter(), new PlayableCharacterViewer());
+        drawElement(gui, getModel().getPlayer1(), new Player1Viewer());
+        drawElement(gui, getModel().getPlayer2(), new Player2Viewer());
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

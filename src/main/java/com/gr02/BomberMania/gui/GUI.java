@@ -8,7 +8,8 @@ import java.io.IOException;
 public interface GUI {
     ACTION getNextAction() throws IOException;
 
-    void drawPlayableCharacter(Position position);
+    void drawPlayer1(Position position);
+    void drawPlayer2(Position position);
 
     void drawText(Position position, String text, String color);
 
@@ -24,5 +25,5 @@ public interface GUI {
 
     void drawBomb(Position position);
 
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, BACKTOMENU, SELECT}
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, BACKTOMENU, SELECT, UP2, RIGHT2, DOWN2, LEFT2}
 }
