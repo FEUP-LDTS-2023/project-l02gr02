@@ -61,6 +61,13 @@ public class Arena {
         return true;
     }
 
+    public boolean isNotIndestructible(Position position) {
+        for (Wall wall : indestructibleWalls)
+            if (wall.getPosition().equals(position))
+                return false;
+        return true;
+    }
+
     public PlayableCharacter getPlayer2() {
         return player2;
     }
