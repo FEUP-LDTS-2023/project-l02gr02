@@ -1,5 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
+import com.gr02.BomberMania.model.game.Bomb;
 import com.gr02.BomberMania.model.game.BrickWall;
 import com.gr02.BomberMania.model.game.IndestructibleWall;
 import com.gr02.BomberMania.model.game.PlayableCharacter;
@@ -13,6 +14,7 @@ public abstract class ArenaBuilder {
         arena.setPlayer2(createPlayer2());
         arena.setIndestructibleWalls(createIndestructibleWalls());
         arena.setBrickWalls(createBrickWalls());
+        arena.setBombs(createBombs());
         return arena;
     }
     protected abstract int getWidth();
@@ -21,4 +23,6 @@ public abstract class ArenaBuilder {
     protected abstract PlayableCharacter createPlayer2();
     protected abstract List<IndestructibleWall> createIndestructibleWalls();
     protected abstract List<BrickWall> createBrickWalls();
+
+    protected abstract List<Bomb> createBombs();
 }

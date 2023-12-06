@@ -1,9 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.BrickWall;
-import com.gr02.BomberMania.model.game.IndestructibleWall;
-import com.gr02.BomberMania.model.game.PlayableCharacter;
-import com.gr02.BomberMania.model.game.Wall;
+import com.gr02.BomberMania.model.game.*;
 import com.gr02.BomberMania.model.Position;
 
 import java.util.List;
@@ -11,10 +8,11 @@ import java.util.List;
 public class Arena {
     private final int height;
     private final int width;
-    private PlayableCharacter Player1;
-    private PlayableCharacter Player2;
-    private List<IndestructibleWall> IndestructibleWalls;
-    private List<BrickWall> BrickWalls;
+    private PlayableCharacter player1;
+    private PlayableCharacter player2;
+    private List<IndestructibleWall> indestructibleWalls;
+    private List<BrickWall> brickWalls;
+    private List<Bomb> bombs;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -30,43 +28,51 @@ public class Arena {
     }
 
     public PlayableCharacter getPlayer1() {
-        return Player1;
+        return player1;
     }
 
     public void setPlayer1(PlayableCharacter player1) {
-        this.Player1 = player1;
+        this.player1 = player1;
     }
 
     public List<IndestructibleWall> getIndestructibleWalls() {
-        return IndestructibleWalls;
+        return indestructibleWalls;
     }
 
     public void setIndestructibleWalls(List<IndestructibleWall> indestructibleWalls) {
-        IndestructibleWalls = indestructibleWalls;
+        this.indestructibleWalls = indestructibleWalls;
     }
 
     public List<BrickWall> getBrickWalls() {
-        return BrickWalls;
+        return brickWalls;
     }
 
     public void setBrickWalls(List<BrickWall> brickWalls) {
-        BrickWalls = brickWalls;
+        this.brickWalls = brickWalls;
     }
     public boolean isEmpty(Position position) {
-        for (Wall wall : BrickWalls)
+        for (Wall wall : brickWalls)
             if (wall.getPosition().equals(position))
                 return false;
-        for (Wall wall : IndestructibleWalls)
+        for (Wall wall : indestructibleWalls)
             if (wall.getPosition().equals(position))
                 return false;
         return true;
     }
 
     public PlayableCharacter getPlayer2() {
-        return Player2;
+        return player2;
     }
 
     public void setPlayer2(PlayableCharacter player) {
-        this.Player2 = player;
+        this.player2 = player;
+    }
+
+    public List<Bomb> getBombs() { return bombs; }
+
+    public void addBomb(Bomb bomb) { bombs.add(bomb); }
+
+    public void setBombs(List<Bomb> bombs) {
+        this.bombs = bombs;
     }
 }

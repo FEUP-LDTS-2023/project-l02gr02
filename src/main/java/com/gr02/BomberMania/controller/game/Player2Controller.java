@@ -3,6 +3,8 @@ package com.gr02.BomberMania.controller.game;
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
+import com.gr02.BomberMania.model.game.Bomb;
+import com.gr02.BomberMania.model.game.BombInfo;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.menu.Menu;
 import com.gr02.BomberMania.states.MenuState;
@@ -33,6 +35,7 @@ public class Player2Controller extends PlayableCharacterController {
             getModel().getPlayer2().setPosition(position);
         }
     }
+
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
         switch (action) {
@@ -50,6 +53,9 @@ public class Player2Controller extends PlayableCharacterController {
                 break;
             case BACKTOMENU:
                 game.setState(new MenuState(new Menu()));
+                break;
+            case BOMB2:
+                placeBomb(getModel().getPlayer2().getPosition(), getModel().getPlayer2().getBombInfo());
                 break;
             default:
         }

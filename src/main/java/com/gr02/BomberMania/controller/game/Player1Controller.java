@@ -52,6 +52,10 @@ public class Player1Controller extends PlayableCharacterController {
             case BACKTOMENU:
                 game.setState(new MenuState(new Menu()));
                 break;
+            case BOMB:
+                placeBomb(getModel().getPlayer1().getPosition(), getModel().getPlayer1().getBombInfo());
+                break;
+            default:
         }
     }
 }

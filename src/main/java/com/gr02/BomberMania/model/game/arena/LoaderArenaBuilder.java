@@ -1,9 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.BombInfo;
-import com.gr02.BomberMania.model.game.BrickWall;
-import com.gr02.BomberMania.model.game.IndestructibleWall;
-import com.gr02.BomberMania.model.game.PlayableCharacter;
+import com.gr02.BomberMania.model.game.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -85,5 +82,10 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         }
 
         return walls;
+    }
+
+    @Override
+    protected List<Bomb> createBombs() {
+        return new ArrayList<>();
     }
 }
