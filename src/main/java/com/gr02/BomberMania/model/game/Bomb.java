@@ -10,4 +10,8 @@ public class Bomb extends Element {
     public BombInfo getBombInfo() {
         return bombInfo;
     }
+
+    public void reduceTimer() {
+        bombInfo.reduceTimer();
+    }
 }

@@ -22,7 +22,5 @@ public abstract class PlayableCharacterController extends GameController {
 
     protected abstract void moveHero(Position position);
 
-    protected void placeBomb(Position position, BombInfo info) {
-        getModel().addBomb( new Bomb(position.getX(), position.getY(), info) );
-    }
+    protected abstract void placeBomb();
 }

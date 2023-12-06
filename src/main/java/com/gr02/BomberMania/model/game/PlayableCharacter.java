@@ -9,6 +9,7 @@ public class PlayableCharacter extends Element {
         super(x, y);
         this.bombInfo = bombInfo;
         this.numberOfBombs = 1;
+        bombInfo.setPlayer(this);
     }
 
     public void decreaseNumberOfBombs() {
