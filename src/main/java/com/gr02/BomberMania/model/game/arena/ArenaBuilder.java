@@ -5,6 +5,7 @@ import com.gr02.BomberMania.model.game.BrickWall;
 import com.gr02.BomberMania.model.game.IndestructibleWall;
 import com.gr02.BomberMania.model.game.PlayableCharacter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ArenaBuilder {
@@ -14,7 +15,8 @@ public abstract class ArenaBuilder {
         arena.setPlayer2(createPlayer2());
         arena.setIndestructibleWalls(createIndestructibleWalls());
         arena.setBrickWalls(createBrickWalls());
-        arena.setBombs(createBombs());
+        arena.setBombs(new ArrayList<>());
+        arena.setFlames(new ArrayList<>());
         return arena;
     }
     protected abstract int getWidth();
@@ -24,5 +26,4 @@ public abstract class ArenaBuilder {
     protected abstract List<IndestructibleWall> createIndestructibleWalls();
     protected abstract List<BrickWall> createBrickWalls();
 
-    protected abstract List<Bomb> createBombs();
 }

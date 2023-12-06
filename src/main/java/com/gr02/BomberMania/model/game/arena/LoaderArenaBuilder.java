@@ -83,9 +83,4 @@ public class LoaderArenaBuilder extends ArenaBuilder {
 
         return walls;
     }
-
-    @Override
-    protected List<Bomb> createBombs() {
-        return new ArrayList<>();
-    }
 }

@@ -14,7 +14,7 @@ public class BombInfo implements Cloneable {
     }
 
     public BombInfo() {
-        this.timer = 280;
+        this.timer = 5 * 60;
         this.explosionRadius = 3;
     }
 
@@ -31,6 +31,7 @@ public class BombInfo implements Cloneable {
 
     public void setPlayer(PlayableCharacter player) { this.player = player; }
 
+    @Override
     public Object clone() {
         try {
             return super.clone();
