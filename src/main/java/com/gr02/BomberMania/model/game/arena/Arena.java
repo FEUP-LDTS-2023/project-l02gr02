@@ -58,6 +58,8 @@ public class Arena {
         for (Wall wall : indestructibleWalls)
             if (wall.getPosition().equals(position))
                 return false;
+        if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
+            return false;
         return true;
     }
 
