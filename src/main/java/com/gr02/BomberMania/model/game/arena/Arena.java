@@ -14,6 +14,7 @@ public class Arena {
     private List<BrickWall> brickWalls;
     private List<Bomb> bombs;
     private List<Flame> flames;
+    private List<PowerUp> powerUps;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -87,4 +88,12 @@ public class Arena {
     public void setFlames(List<Flame> flames) { this.flames = flames; }
 
     public void addFlame(Flame flame) { flames.add(flame); }
+
+    public List<PowerUp> getPowerUps() {
+        return powerUps;
+    }
+
+    public void setPowerUps(List<PowerUp> powerUps) {
+        this.powerUps = powerUps;
+    }
 }

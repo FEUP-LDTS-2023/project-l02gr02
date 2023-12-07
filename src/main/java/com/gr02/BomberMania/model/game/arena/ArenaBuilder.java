@@ -17,6 +17,7 @@ public abstract class ArenaBuilder {
         arena.setBrickWalls(createBrickWalls());
         arena.setBombs(new ArrayList<>());
         arena.setFlames(new ArrayList<>());
+        arena.setPowerUps(new ArrayList<>());
         return arena;
     }
     protected abstract int getWidth();
