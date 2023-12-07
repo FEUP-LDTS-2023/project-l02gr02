@@ -1,6 +1,8 @@
-package com.gr02.BomberMania.model.game;
+package com.gr02.BomberMania.model.game.Elements;
 
-public class Flame extends Element{
+import com.gr02.BomberMania.model.game.Element;
+
+public class Flame extends Element {
 
     private int timer;
     public Flame(int x, int y) {

@@ -1,6 +1,8 @@
-package com.gr02.BomberMania.model.game;
+package com.gr02.BomberMania.model.game.Elements;
 
 import com.gr02.BomberMania.model.Position;
+import com.gr02.BomberMania.model.game.BombInfo;
+import com.gr02.BomberMania.model.game.Element;
 import com.gr02.BomberMania.model.game.arena.Arena;
 
 public class Bomb extends Element {

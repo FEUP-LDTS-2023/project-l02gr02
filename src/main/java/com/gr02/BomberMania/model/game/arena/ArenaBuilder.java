@@ -1,9 +1,8 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.Bomb;
-import com.gr02.BomberMania.model.game.BrickWall;
-import com.gr02.BomberMania.model.game.IndestructibleWall;
-import com.gr02.BomberMania.model.game.PlayableCharacter;
+import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
+import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
+import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 
 import java.util.ArrayList;
 import java.util.List;

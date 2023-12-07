@@ -2,8 +2,6 @@ package com.gr02.BomberMania.controller.game;
 
 
 import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.model.game.Bomb;
-import com.gr02.BomberMania.model.game.BombInfo;
 import com.gr02.BomberMania.model.game.arena.Arena;
 
 
