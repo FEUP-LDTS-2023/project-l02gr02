@@ -52,11 +52,14 @@ public class Arena {
         this.brickWalls = brickWalls;
     }
     public boolean isEmpty(Position position) {
-        for (Wall wall : brickWalls)
-            if (wall.getPosition().equals(position))
+        for (Wall brick : brickWalls)
+            if (brick.getPosition().equals(position))
                 return false;
         for (Wall wall : indestructibleWalls)
             if (wall.getPosition().equals(position))
+                return false;
+        for (Bomb bomb : bombs)
+            if (bomb.getPosition().equals(position))
                 return false;
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
             return false;
