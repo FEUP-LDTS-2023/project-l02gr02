@@ -68,6 +68,15 @@ public class Arena {
         return true;
     }
 
+    public boolean destruct(Position position) {
+        for (Wall wall : brickWalls)
+            if (wall.getPosition().equals(position)) {
+                brickWalls.remove(wall);
+                return true;
+            }
+        return false;
+    }
+
     public PlayableCharacter getPlayer2() {
         return player2;
     }

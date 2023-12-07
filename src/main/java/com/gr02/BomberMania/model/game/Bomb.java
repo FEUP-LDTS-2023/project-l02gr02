@@ -21,27 +21,30 @@ public class Bomb extends Element {
     public void explode(Arena arena) {
         // Propagating Flame to the right
         for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
-            if (arena.isNotIndestructible(new Position(getPosition().getX() + i, getPosition().getY())))
-                arena.addFlame(new Flame(getPosition().getX() + i, getPosition().getY()));
-            else break;
+            if (!propagating(arena, new Position(getPosition().getX() + i, getPosition().getY()))) break;
         }
         // Propagating Flame to the left
         for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
-            if (arena.isNotIndestructible(new Position(getPosition().getX() - i, getPosition().getY())))
-                arena.addFlame(new Flame(getPosition().getX() - i, getPosition().getY()));
-            else break;
+            if (!propagating(arena, new Position(getPosition().getX() - i, getPosition().getY()))) break;
         }
         // Propagating Flame Down
         for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
-            if (arena.isNotIndestructible(new Position(getPosition().getX(), getPosition().getY() + i)))
-                arena.addFlame(new Flame(getPosition().getX(), getPosition().getY() + i));
-            else break;
+            if (!propagating(arena, new Position(getPosition().getX(), getPosition().getY() + i))) break;
         }
         // Propagating Flame Up
         for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
-            if (arena.isNotIndestructible(new Position(getPosition().getX(), getPosition().getY() - i)))
-                arena.addFlame(new Flame(getPosition().getX(), getPosition().getY() - i));
-            else break;
+            if (!propagating(arena, new Position(getPosition().getX(), getPosition().getY() - i))) break;
         }
+    }
+
+    private boolean propagating(Arena arena, Position position) {
+        if (arena.isNotIndestructible(position)) {
+            arena.addFlame(new Flame(position.getX(), position.getY()));
+            if (arena.destruct(position))
+                return false;
+        }
+        else return false;
+
+        return true;
     }
 }
