@@ -7,6 +7,7 @@ import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.Wall;
+import com.gr02.BomberMania.model.game.PowerUps.PowerUp;
 
 import java.util.List;
 

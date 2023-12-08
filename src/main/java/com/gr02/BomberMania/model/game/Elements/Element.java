@@ -1,4 +1,4 @@
-package com.gr02.BomberMania.model.game;
+package com.gr02.BomberMania.model.game.Elements;
 
 import com.gr02.BomberMania.model.Position;
 

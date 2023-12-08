@@ -1,7 +1,6 @@
 package com.gr02.BomberMania.model.game.Elements;
 
-import com.gr02.BomberMania.model.game.BombInfo;
-import com.gr02.BomberMania.model.game.Element;
+import com.gr02.BomberMania.Game;
 
 public class PlayableCharacter extends Element {
 
@@ -21,6 +20,18 @@ public class PlayableCharacter extends Element {
 
     public void increaseNumberOfBombs() {
         if (this.numberOfBombs < 5) this.numberOfBombs++;
+    }
+
+    public void increaseOneExplosionRadius() {
+        if (this.bombInfo.getExplosionRadius() < 5) {
+            this.bombInfo.setExplosionRadius(this.bombInfo.getExplosionRadius() + 1);
+        }
+    }
+
+    public void decreaseBombTimer() {
+        if (this.bombInfo.getTimer() > 2) {
+            this.bombInfo.setTimer(this.bombInfo.getTimer() - Game.FPS);
+        }
     }
 
     public int getNumberOfBombs() {

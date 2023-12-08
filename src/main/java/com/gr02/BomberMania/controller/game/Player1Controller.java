@@ -4,7 +4,7 @@ import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.Elements.Bomb;
-import com.gr02.BomberMania.model.game.BombInfo;
+import com.gr02.BomberMania.model.game.Elements.BombInfo;
 import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.menu.MainMenu;

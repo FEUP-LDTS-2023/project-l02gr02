@@ -1,6 +1,5 @@
 package com.gr02.BomberMania.model.game.Elements;
 
-import com.gr02.BomberMania.model.game.Element;
 import com.gr02.BomberMania.model.game.arena.Arena;
 
 public class Flame extends Element implements Timer {

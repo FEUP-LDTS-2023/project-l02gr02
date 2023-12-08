@@ -130,7 +130,15 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawAddOneBomb(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#AA0000");
+        drawCharacter(position.getX(), position.getY(), 'X', "#FF0000");
+    }
+    @Override
+    public void drawAddOneExplosionRadius(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'Z', "#FF0000");
+    }
+    @Override
+    public void drawDecreaseTimer(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'C', "#FF0000");
     }
 
     @Override

@@ -28,6 +28,8 @@ public interface GUI {
     void drawFlame(Position position);
 
     void drawAddOneBomb(Position position);
+    void drawAddOneExplosionRadius(Position position);
+    void drawDecreaseTimer(Position position);
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, BOMB, NONE, BACKTOMENU, SELECT, UP2, RIGHT2, DOWN2, LEFT2, BOMB2}
 }
