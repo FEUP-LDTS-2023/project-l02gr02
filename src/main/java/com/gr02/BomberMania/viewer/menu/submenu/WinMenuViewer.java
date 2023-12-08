@@ -1,8 +1,8 @@
-package com.gr02.BomberMania.viewer.menu;
+package com.gr02.BomberMania.viewer.menu.submenu;
 
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.model.menu.WinMenu;
+import com.gr02.BomberMania.model.menu.submenu.WinMenu;
 import com.gr02.BomberMania.viewer.Viewer;
 
 public class WinMenuViewer extends Viewer<WinMenu> {

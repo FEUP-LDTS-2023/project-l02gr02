@@ -8,7 +8,7 @@ import com.gr02.BomberMania.model.game.BombInfo;
 import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.menu.MainMenu;
-import com.gr02.BomberMania.states.MainMenuState;
+import com.gr02.BomberMania.states.menu.MainMenuState;
 
 public class Player2Controller extends PlayableCharacterController {
     public Player2Controller(Arena arena) {

@@ -1,13 +1,13 @@
-package com.gr02.BomberMania.controller.menu;
+package com.gr02.BomberMania.controller.menu.submenu;
 
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.controller.Controller;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.arena.LoaderArenaBuilder;
 import com.gr02.BomberMania.model.menu.MainMenu;
-import com.gr02.BomberMania.model.menu.WinMenu;
-import com.gr02.BomberMania.states.GameState;
-import com.gr02.BomberMania.states.MainMenuState;
+import com.gr02.BomberMania.model.menu.submenu.WinMenu;
+import com.gr02.BomberMania.states.game.GameState;
+import com.gr02.BomberMania.states.menu.MainMenuState;
 
 import java.io.IOException;
 

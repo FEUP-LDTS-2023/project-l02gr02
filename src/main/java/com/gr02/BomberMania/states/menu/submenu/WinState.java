@@ -1,10 +1,11 @@
-package com.gr02.BomberMania.states;
+package com.gr02.BomberMania.states.menu.submenu;
 
 import com.gr02.BomberMania.controller.Controller;
-import com.gr02.BomberMania.model.menu.WinMenu;
-import com.gr02.BomberMania.controller.menu.WinMenuController;
+import com.gr02.BomberMania.model.menu.submenu.WinMenu;
+import com.gr02.BomberMania.controller.menu.submenu.WinMenuController;
+import com.gr02.BomberMania.states.State;
 import com.gr02.BomberMania.viewer.Viewer;
-import com.gr02.BomberMania.viewer.menu.WinMenuViewer;
+import com.gr02.BomberMania.viewer.menu.submenu.WinMenuViewer;
 
 public class WinState extends State<WinMenu> {
     public WinState(WinMenu model) {

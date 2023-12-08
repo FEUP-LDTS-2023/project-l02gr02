@@ -4,8 +4,8 @@ import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.Elements.Flame;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.menu.WinMenu;
-import com.gr02.BomberMania.states.WinState;
+import com.gr02.BomberMania.model.menu.submenu.WinMenu;
+import com.gr02.BomberMania.states.menu.submenu.WinState;
 
 import java.io.IOException;
 import java.util.List;

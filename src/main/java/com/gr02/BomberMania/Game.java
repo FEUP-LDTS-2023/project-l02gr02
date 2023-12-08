@@ -2,7 +2,7 @@ package com.gr02.BomberMania;
 
 import com.gr02.BomberMania.gui.LanternaGUI;
 import com.gr02.BomberMania.model.menu.MainMenu;
-import com.gr02.BomberMania.states.MainMenuState;
+import com.gr02.BomberMania.states.menu.MainMenuState;
 import com.gr02.BomberMania.states.State;
 
 import java.awt.*;

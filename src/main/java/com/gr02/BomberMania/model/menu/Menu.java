@@ -2,7 +2,7 @@ package com.gr02.BomberMania.model.menu;
 
 import java.util.List;
 
-public abstract class Menu {
+public class Menu {
     protected final List<String> entries;
     private int currentEntry = 0;
 

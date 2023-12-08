@@ -1,8 +1,10 @@
-package com.gr02.BomberMania.model.menu;
+package com.gr02.BomberMania.model.menu.submenu;
+
+import com.gr02.BomberMania.model.menu.Menu;
 
 import java.util.Arrays;
 
-public class WinMenu extends Menu{
+public class WinMenu extends Menu {
 
     final int playerNumber;
 

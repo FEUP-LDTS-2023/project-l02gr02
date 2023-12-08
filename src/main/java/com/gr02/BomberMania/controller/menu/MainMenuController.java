@@ -5,7 +5,7 @@ import com.gr02.BomberMania.model.game.arena.LoaderArenaBuilder;
 import com.gr02.BomberMania.model.menu.MainMenu;
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.states.GameState;
+import com.gr02.BomberMania.states.game.GameState;
 
 import java.io.IOException;
 
