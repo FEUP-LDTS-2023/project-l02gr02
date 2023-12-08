@@ -6,10 +6,15 @@ import com.gr02.BomberMania.model.game.Elements.Flame;
 import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
+import com.gr02.BomberMania.model.game.Elements.Walls.PowerUpWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.Wall;
+import com.gr02.BomberMania.model.game.PowerUps.AddOneBomb;
+import com.gr02.BomberMania.model.game.PowerUps.AddOneExplosionRadius;
+import com.gr02.BomberMania.model.game.PowerUps.DecreaseTimer;
 import com.gr02.BomberMania.model.game.PowerUps.PowerUp;
 
 import java.util.List;
+import java.util.Random;
 
 public class Arena {
     private final int height;
@@ -18,6 +23,7 @@ public class Arena {
     private PlayableCharacter player2;
     private List<IndestructibleWall> indestructibleWalls;
     private List<BrickWall> brickWalls;
+    private List<PowerUpWall> powerUpWalls;
     private List<Bomb> bombs;
     private List<Flame> flames;
     private List<PowerUp> powerUps;
@@ -58,7 +64,7 @@ public class Arena {
     public void setBrickWalls(List<BrickWall> brickWalls) {
         this.brickWalls = brickWalls;
     }
-    public boolean isEmpty(Position position) {
+    public boolean isEmpty(Position position, PlayableCharacter player) {
         for (Wall brick : brickWalls)
             if (brick.getPosition().equals(position))
                 return false;
@@ -68,6 +74,15 @@ public class Arena {
         for (Bomb bomb : bombs)
             if (bomb.getPosition().equals(position))
                 return false;
+        for (PowerUpWall powerUpWall : powerUpWalls)
+            if (powerUpWall.getPosition().equals(position))
+                return false;
+        for (PowerUp powerUp : powerUps)
+            if (powerUp.getPosition().equals(position)) {
+                powerUps.remove(powerUp);
+                powerUp.execute(player);
+                return true;
+            }
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
             return false;
         return true;
@@ -84,6 +99,24 @@ public class Arena {
         for (Wall wall : brickWalls)
             if (wall.getPosition().equals(position)) {
                 brickWalls.remove(wall);
+                return true;
+            }
+        for (Wall wall : powerUpWalls)
+            if (wall.getPosition().equals(position)) {
+                powerUpWalls.remove(wall);
+                Random random = new Random();
+                int numeroAleatorio = random.nextInt(3) + 1;
+                switch (numeroAleatorio) {
+                    case 1:
+                        powerUps.add(new AddOneExplosionRadius(wall.getPosition().getX(), wall.getPosition().getY()));
+                        break;
+                    case 2:
+                        powerUps.add(new AddOneBomb(wall.getPosition().getX(), wall.getPosition().getY()));
+                        break;
+                    case 3:
+                        powerUps.add(new DecreaseTimer(wall.getPosition().getX(), wall.getPosition().getY()));
+                        break;
+                }
                 return true;
             }
         return false;
@@ -117,5 +150,13 @@ public class Arena {
 
     public void setPowerUps(List<PowerUp> powerUps) {
         this.powerUps = powerUps;
+    }
+
+    public List<PowerUpWall> getPowerUpWalls() {
+        return powerUpWalls;
+    }
+
+    public void setPowerUpWalls(List<PowerUpWall> powerUpWalls) {
+        this.powerUpWalls = powerUpWalls;
     }
 }

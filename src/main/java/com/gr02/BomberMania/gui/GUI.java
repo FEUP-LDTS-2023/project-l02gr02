@@ -9,6 +9,7 @@ public interface GUI {
     ACTION getNextAction() throws IOException;
 
     void drawPlayer1(Position position);
+
     void drawPlayer2(Position position);
 
     void drawText(Position position, String text, String color);
@@ -16,6 +17,8 @@ public interface GUI {
     void drawIndestructibleWall(Position position);
 
     void drawBrickWall(Position position);
+
+    void drawPowerUpWall(Position position);
 
     void clear();
 
@@ -28,7 +31,9 @@ public interface GUI {
     void drawFlame(Position position);
 
     void drawAddOneBomb(Position position);
+
     void drawAddOneExplosionRadius(Position position);
+
     void drawDecreaseTimer(Position position);
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, BOMB, NONE, BACKTOMENU, SELECT, UP2, RIGHT2, DOWN2, LEFT2, BOMB2}

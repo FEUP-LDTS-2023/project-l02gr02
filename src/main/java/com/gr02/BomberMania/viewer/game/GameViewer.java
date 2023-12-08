@@ -10,6 +10,9 @@ import com.gr02.BomberMania.viewer.Viewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneBombViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneExplosionRadiusViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.DecreaseTimerVIewer;
+import com.gr02.BomberMania.viewer.game.walls.BrickViewer;
+import com.gr02.BomberMania.viewer.game.walls.IndestructibleWallViewer;
+import com.gr02.BomberMania.viewer.game.walls.PowerUpWallViewer;
 
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElement(gui, getModel().getPlayer2(), new Player2Viewer());
         drawElements(gui, getModel().getBombs(), new BombViewer());
         drawElements(gui, getModel().getFlames(), new FlameViewer());
+        drawElements(gui, getModel().getPowerUpWalls(), new PowerUpWallViewer());
         drawPowerUp(gui, getModel().getPowerUps());
     }
 

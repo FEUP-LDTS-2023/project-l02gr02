@@ -32,7 +32,7 @@ public class Player2Controller extends PlayableCharacterController {
     }
     @Override
     protected void moveHero(Position position) {
-        if (getModel().isEmpty(position)) {
+        if (getModel().isEmpty(position, getModel().getPlayer2())) {
             getModel().getPlayer2().setPosition(position);
         }
     }

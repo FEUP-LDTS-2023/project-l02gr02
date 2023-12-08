@@ -119,6 +119,10 @@ public class LanternaGUI implements GUI {
     public void drawIndestructibleWall(Position position) {
         drawCharacter(position.getX(), position.getY(), '%', "#BC4A3C");
     }
+    @Override
+    public void drawPowerUpWall(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'V', "#BC4A3C");
+    }
 
     @Override
     public void drawBrickWall(Position position) {
