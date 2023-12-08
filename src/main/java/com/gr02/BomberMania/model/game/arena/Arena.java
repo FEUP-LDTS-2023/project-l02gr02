@@ -154,6 +154,14 @@ public class Arena {
                 }
                 return true;
             }
+        for (Bomb bomb : bombs) {
+            if (bomb.getPosition().equals(position)) {
+                bomb.getBombInfo().setTimer(0);
+                bombs.remove(bomb);
+                bomb.explode(this);
+                return true;
+            }
+        }
         return false;
     }
 
