@@ -70,15 +70,28 @@ public class Arena {
                 return false;
         for (Bomb bomb : bombs)
             if (bomb.getPosition().equals(position)) {
+                Boolean canPass = false;
                 if (player.getPosition().getX() > bomb.getPosition().getX()
-                        && isEmptyForBombs(bomb.getPosition().getLeft()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getLeft());
+                        && isEmptyForBombs(bomb.getPosition().getLeft()) && player.isCanPushBombs()) {
+                    bomb.setPosition(bomb.getPosition().getLeft());
+                    canPass = true;
+                }
                 if (player.getPosition().getX() < bomb.getPosition().getX()
-                        && isEmptyForBombs(bomb.getPosition().getRight()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getRight());
+                        && isEmptyForBombs(bomb.getPosition().getRight()) && player.isCanPushBombs()) {
+                    bomb.setPosition(bomb.getPosition().getRight());
+                    canPass = true;
+                }
                 if (player.getPosition().getY() > bomb.getPosition().getY()
-                        && isEmptyForBombs(bomb.getPosition().getUp()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getUp());
+                        && isEmptyForBombs(bomb.getPosition().getUp()) && player.isCanPushBombs()) {
+                    bomb.setPosition(bomb.getPosition().getUp());
+                    canPass = true;
+                }
                 if (player.getPosition().getY() < bomb.getPosition().getY()
-                        && isEmptyForBombs(bomb.getPosition().getDown()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getDown());
-                return player.isCanPushBombs();
+                        && isEmptyForBombs(bomb.getPosition().getDown()) && player.isCanPushBombs()) {
+                    bomb.setPosition(bomb.getPosition().getDown());
+                    canPass = true;
+                }
+                return canPass;
             }
         for (PowerUpWall powerUpWall : powerUpWalls)
             if (powerUpWall.getPosition().equals(position))
@@ -110,7 +123,6 @@ public class Arena {
                 return false;
         for (PowerUp powerUp : powerUps)
             if (powerUp.getPosition().equals(position)) {
-                powerUps.remove(powerUp);
                 return false;
             }
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
