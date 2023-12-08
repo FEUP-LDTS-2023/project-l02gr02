@@ -1,4 +1,7 @@
-package com.gr02.BomberMania.model.game;
+package com.gr02.BomberMania.model.game.Elements;
+
+import com.gr02.BomberMania.model.game.BombInfo;
+import com.gr02.BomberMania.model.game.Element;
 
 public class PlayableCharacter extends Element {
 

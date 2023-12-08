@@ -1,7 +1,7 @@
-package com.gr02.BomberMania.viewer;
+package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.Bomb;
+import com.gr02.BomberMania.model.game.Elements.Bomb;
 import com.gr02.BomberMania.model.game.BombInfo;
 import com.gr02.BomberMania.viewer.game.BombViewer;
 import org.junit.jupiter.api.BeforeEach;

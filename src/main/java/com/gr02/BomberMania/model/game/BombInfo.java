@@ -1,6 +1,9 @@
 package com.gr02.BomberMania.model.game;
 
-public class BombInfo implements Cloneable {
+import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.Elements.Timer;
+
+public class BombInfo implements Cloneable, Timer {
 
     private int timer;
     private int explosionRadius;
@@ -15,13 +18,14 @@ public class BombInfo implements Cloneable {
 
     public BombInfo() {
         this.timer = 5 * 60;
-        this.explosionRadius = 3;
+        this.explosionRadius = 1;
     }
 
     public int getTimer() {
         return timer;
     }
 
+    @Override
     public void reduceTimer() { timer--;}
     public int getExplosionRadius() {
         return explosionRadius;

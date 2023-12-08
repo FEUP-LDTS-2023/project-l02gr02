@@ -1,8 +1,7 @@
 package com.gr02.BomberMania.viewer.game;
 
-
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.IndestructibleWall;
+import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
 
 public class IndestructibleWallViewer implements ElementViewer<IndestructibleWall> {
     @Override

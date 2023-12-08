@@ -1,14 +1,13 @@
 package com.gr02.BomberMania.model.menu;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Menu {
-    private final List<String> entries;
+    protected final List<String> entries;
     private int currentEntry = 0;
 
-    public Menu() {
-        this.entries = Arrays.asList("Start", "Exit", "Instruction");
+    public Menu(List<String> entries) {
+        this.entries = entries;
     }
 
     public void nextEntry() {
@@ -32,17 +31,6 @@ public class Menu {
     public boolean isSelected(int i) {
         return currentEntry == i;
     }
-
-
-    public boolean isSelectedExit() {
-        return isSelected(1);
-    }
-
-    public boolean isSelectedStart() {
-        return isSelected(0);
-    }
-
-    public boolean isSelectedInstruction() {return isSelected(2);}
 
     public int getNumberEntries() {
         return this.entries.size();

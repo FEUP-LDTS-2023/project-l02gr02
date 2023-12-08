@@ -51,7 +51,7 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/bombermania.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -89,17 +89,17 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPlayer1(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'H', "#FFD700");
+        drawCharacter(position.getX(), position.getY(), '?', "#88DAD4");
     }
 
     @Override
     public void drawPlayer2(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'F', "#FFD700");
+        drawCharacter(position.getX(), position.getY(), '?', "#FCE97D");
     }
 
     @Override
     public void drawBomb(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'O', "#FFFFFF");
+        drawCharacter(position.getX(), position.getY(), '+', "#FFFFFF");
     }
 
     private void drawCharacter(int x, int y, char c, String color) {
@@ -117,16 +117,16 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawIndestructibleWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '%', "#BC4A3C");
     }
 
     @Override
     public void drawBrickWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'B', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '#', "#9F0000");
     }
 
     @Override
-    public void drawFlame(Position position) { drawCharacter(position.getX(), position.getY(), 'X', "#FF0000");}
+    public void drawFlame(Position position) { drawCharacter(position.getX(), position.getY(), '&', "#ffe808");}
 
     @Override
     public void drawAddOneBomb(Position position) {

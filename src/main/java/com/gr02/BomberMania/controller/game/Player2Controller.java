@@ -3,12 +3,12 @@ package com.gr02.BomberMania.controller.game;
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.model.game.Bomb;
+import com.gr02.BomberMania.model.game.Elements.Bomb;
 import com.gr02.BomberMania.model.game.BombInfo;
-import com.gr02.BomberMania.model.game.PlayableCharacter;
+import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.menu.Menu;
-import com.gr02.BomberMania.states.MenuState;
+import com.gr02.BomberMania.model.menu.MainMenu;
+import com.gr02.BomberMania.states.menu.MainMenuState;
 
 public class Player2Controller extends PlayableCharacterController {
     public Player2Controller(Arena arena) {
@@ -43,6 +43,7 @@ public class Player2Controller extends PlayableCharacterController {
         getModel().addBomb( new Bomb(player.getPosition().getX(), player.getPosition().getY(), (BombInfo) player.getBombInfo().clone()) );
         player.decreaseNumberOfBombs();
     }
+
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
         switch (action) {
@@ -59,7 +60,7 @@ public class Player2Controller extends PlayableCharacterController {
                 moveHeroLeft();
                 break;
             case BACKTOMENU:
-                game.setState(new MenuState(new Menu()));
+                game.setState(new MainMenuState(new MainMenu()));
                 break;
             case BOMB2:
                 placeBomb();

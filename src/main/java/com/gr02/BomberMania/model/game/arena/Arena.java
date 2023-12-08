@@ -1,7 +1,12 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.*;
 import com.gr02.BomberMania.model.Position;
+import com.gr02.BomberMania.model.game.Elements.Bomb;
+import com.gr02.BomberMania.model.game.Elements.Flame;
+import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
+import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
+import com.gr02.BomberMania.model.game.Elements.Walls.Wall;
 
 import java.util.List;
 
@@ -65,6 +70,22 @@ public class Arena {
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
             return false;
         return true;
+    }
+
+    public boolean isNotIndestructible(Position position) {
+        for (Wall wall : indestructibleWalls)
+            if (wall.getPosition().equals(position))
+                return false;
+        return true;
+    }
+
+    public boolean destruct(Position position) {
+        for (Wall wall : brickWalls)
+            if (wall.getPosition().equals(position)) {
+                brickWalls.remove(wall);
+                return true;
+            }
+        return false;
     }
 
     public PlayableCharacter getPlayer2() {
