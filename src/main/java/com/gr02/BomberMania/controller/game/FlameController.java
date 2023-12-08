@@ -4,6 +4,8 @@ import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.Elements.Flame;
 import com.gr02.BomberMania.model.game.arena.Arena;
+import com.gr02.BomberMania.model.menu.WinMenu;
+import com.gr02.BomberMania.states.WinState;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,6 +22,13 @@ public class FlameController extends GameController {
         List<Flame> flamesCopy = List.copyOf(getModel().getFlames());
         for (Flame flame : flamesCopy) {
             flame.reduceTimer();
+            // Checking Player hits
+            if (flame.checkHit(getModel(), getModel().getPlayer1())) {
+                game.setState(new WinState(new WinMenu(2)));
+            }
+            if (flame.checkHit(getModel(), getModel().getPlayer2())) {
+                game.setState(new WinState(new WinMenu(1)));
+            }
             if (flame.getTimer() <= 0) {
                 getModel().getFlames().remove(flame);
             }

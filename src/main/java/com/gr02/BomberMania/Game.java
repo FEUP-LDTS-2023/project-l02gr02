@@ -1,8 +1,8 @@
 package com.gr02.BomberMania;
 
 import com.gr02.BomberMania.gui.LanternaGUI;
-import com.gr02.BomberMania.model.menu.Menu;
-import com.gr02.BomberMania.states.MenuState;
+import com.gr02.BomberMania.model.menu.MainMenu;
+import com.gr02.BomberMania.states.MainMenuState;
 import com.gr02.BomberMania.states.State;
 
 import java.awt.*;
@@ -15,7 +15,7 @@ public class Game {
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(20, 20);
-        this.state = new MenuState(new Menu());
+        this.state = new MainMenuState(new MainMenu());
     }
 
     public static void main(String[] args) throws FontFormatException, IOException, URISyntaxException {

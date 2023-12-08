@@ -3,12 +3,9 @@ package com.gr02.BomberMania.controller.game;
 
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.Elements.Bomb;
-import com.gr02.BomberMania.model.game.Elements.Flame;
 import com.gr02.BomberMania.model.game.arena.Arena;
 
 import java.io.IOException;
-import java.util.List;
 
 public class ArenaController extends GameController {
     private final Player1Controller player1;
