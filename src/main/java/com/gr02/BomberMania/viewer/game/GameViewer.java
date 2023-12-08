@@ -3,11 +3,13 @@ package com.gr02.BomberMania.viewer.game;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.PowerUps.AddOneBomb;
 import com.gr02.BomberMania.model.game.PowerUps.AddOneExplosionRadius;
+import com.gr02.BomberMania.model.game.PowerUps.DecreaseTimer;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.Elements.Element;
 import com.gr02.BomberMania.viewer.Viewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneBombViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneExplosionRadiusViewer;
+import com.gr02.BomberMania.viewer.game.powerUps.DecreaseTimerVIewer;
 
 import java.util.List;
 
@@ -45,6 +47,10 @@ public class GameViewer extends Viewer<Arena> {
             if (element instanceof AddOneExplosionRadius) {
                 ElementViewer<AddOneExplosionRadius> viewer = new AddOneExplosionRadiusViewer();
                 viewer.draw((AddOneExplosionRadius) element, gui);
+            }
+            if (element instanceof DecreaseTimer) {
+                ElementViewer<DecreaseTimer> viewer = new DecreaseTimerVIewer();
+                viewer.draw((DecreaseTimer) element, gui);
             }
         }
     }
