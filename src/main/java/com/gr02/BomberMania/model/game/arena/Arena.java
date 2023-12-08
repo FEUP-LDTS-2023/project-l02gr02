@@ -77,7 +77,7 @@ public class Arena {
                 if (player.getPosition().getY() > bomb.getPosition().getY()
                         && isEmptyForBombs(bomb.getPosition().getUp()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getUp());
                 if (player.getPosition().getY() < bomb.getPosition().getY()
-                        && isEmptyForBombs(bomb.getPosition().getLeft()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getDown());
+                        && isEmptyForBombs(bomb.getPosition().getDown()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getDown());
                 return player.isCanPushBombs();
             }
         for (PowerUpWall powerUpWall : powerUpWalls)
