@@ -111,7 +111,7 @@ public class Arena {
         for (PowerUp powerUp : powerUps)
             if (powerUp.getPosition().equals(position)) {
                 powerUps.remove(powerUp);
-                return true;
+                return false;
             }
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
             return false;
