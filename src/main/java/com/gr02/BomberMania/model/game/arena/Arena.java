@@ -162,7 +162,13 @@ public class Arena {
                 return true;
             }
         }
+        for (PowerUp powerUp : powerUps)
+            if (powerUp.getPosition().equals(position)) {
+                powerUps.remove(powerUp);
+                return true;
+            }
         return false;
+
     }
 
     public PlayableCharacter getPlayer2() {
