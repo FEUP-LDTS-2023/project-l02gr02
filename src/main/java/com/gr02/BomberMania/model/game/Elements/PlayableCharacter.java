@@ -3,7 +3,7 @@ package com.gr02.BomberMania.model.game.Elements;
 import com.gr02.BomberMania.Game;
 
 public class PlayableCharacter extends Element {
-
+    private boolean canPushBombs = false;
     private int numberOfBombs;
     private BombInfo bombInfo;
 
@@ -42,4 +42,11 @@ public class PlayableCharacter extends Element {
         return bombInfo;
     }
 
+    public boolean isCanPushBombs() {
+        return canPushBombs;
+    }
+
+    public void setCanPushBombs(boolean canPushBombs) {
+        this.canPushBombs = canPushBombs;
+    }
 }

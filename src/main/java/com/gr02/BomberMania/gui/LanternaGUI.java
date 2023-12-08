@@ -144,6 +144,10 @@ public class LanternaGUI implements GUI {
     public void drawDecreaseTimer(Position position) {
         drawCharacter(position.getX(), position.getY(), 'C', "#FF0000");
     }
+    @Override
+    public void drawPushBomb(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'N', "#FF0000");
+    }
 
     @Override
     public void clear() {

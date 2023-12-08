@@ -8,10 +8,7 @@ import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.PowerUpWall;
 import com.gr02.BomberMania.model.game.Elements.Walls.Wall;
-import com.gr02.BomberMania.model.game.PowerUps.AddOneBomb;
-import com.gr02.BomberMania.model.game.PowerUps.AddOneExplosionRadius;
-import com.gr02.BomberMania.model.game.PowerUps.DecreaseTimer;
-import com.gr02.BomberMania.model.game.PowerUps.PowerUp;
+import com.gr02.BomberMania.model.game.PowerUps.*;
 
 import java.util.List;
 import java.util.Random;
@@ -72,8 +69,17 @@ public class Arena {
             if (wall.getPosition().equals(position))
                 return false;
         for (Bomb bomb : bombs)
-            if (bomb.getPosition().equals(position))
-                return false;
+            if (bomb.getPosition().equals(position)) {
+                if (player.getPosition().getX() > bomb.getPosition().getX()
+                        && isEmptyForBombs(bomb.getPosition().getLeft()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getLeft());
+                if (player.getPosition().getX() < bomb.getPosition().getX()
+                        && isEmptyForBombs(bomb.getPosition().getRight()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getRight());
+                if (player.getPosition().getY() > bomb.getPosition().getY()
+                        && isEmptyForBombs(bomb.getPosition().getUp()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getUp());
+                if (player.getPosition().getY() < bomb.getPosition().getY()
+                        && isEmptyForBombs(bomb.getPosition().getLeft()) && player.isCanPushBombs()) bomb.setPosition(bomb.getPosition().getDown());
+                return player.isCanPushBombs();
+            }
         for (PowerUpWall powerUpWall : powerUpWalls)
             if (powerUpWall.getPosition().equals(position))
                 return false;
@@ -81,6 +87,30 @@ public class Arena {
             if (powerUp.getPosition().equals(position)) {
                 powerUps.remove(powerUp);
                 powerUp.execute(player);
+                return true;
+            }
+        if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
+            return false;
+        return true;
+    }
+
+    public boolean isEmptyForBombs(Position position) {
+        for (Wall brick : brickWalls)
+            if (brick.getPosition().equals(position))
+                return false;
+        for (Wall wall : indestructibleWalls)
+            if (wall.getPosition().equals(position))
+                return false;
+        for (Bomb bomb : bombs)
+            if (bomb.getPosition().equals(position)) {
+                return true;
+            }
+        for (PowerUpWall powerUpWall : powerUpWalls)
+            if (powerUpWall.getPosition().equals(position))
+                return false;
+        for (PowerUp powerUp : powerUps)
+            if (powerUp.getPosition().equals(position)) {
+                powerUps.remove(powerUp);
                 return true;
             }
         if (position.equals(player2.getPosition()) || position.equals(player1.getPosition()))
@@ -105,7 +135,7 @@ public class Arena {
             if (wall.getPosition().equals(position)) {
                 powerUpWalls.remove(wall);
                 Random random = new Random();
-                int numeroAleatorio = random.nextInt(3) + 1;
+                int numeroAleatorio = random.nextInt(4) + 1;
                 switch (numeroAleatorio) {
                     case 1:
                         powerUps.add(new AddOneExplosionRadius(wall.getPosition().getX(), wall.getPosition().getY()));
@@ -115,6 +145,11 @@ public class Arena {
                         break;
                     case 3:
                         powerUps.add(new DecreaseTimer(wall.getPosition().getX(), wall.getPosition().getY()));
+                        break;
+                    case 4:
+                        powerUps.add(new PushBomb(wall.getPosition().getX(), wall.getPosition().getY()));
+                        break;
+                    default:
                         break;
                 }
                 return true;

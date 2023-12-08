@@ -35,6 +35,7 @@ public interface GUI {
     void drawAddOneExplosionRadius(Position position);
 
     void drawDecreaseTimer(Position position);
+    void drawPushBomb(Position position);
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, BOMB, NONE, BACKTOMENU, SELECT, UP2, RIGHT2, DOWN2, LEFT2, BOMB2}
 }

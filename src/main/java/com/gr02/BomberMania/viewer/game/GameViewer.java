@@ -4,12 +4,14 @@ import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.PowerUps.AddOneBomb;
 import com.gr02.BomberMania.model.game.PowerUps.AddOneExplosionRadius;
 import com.gr02.BomberMania.model.game.PowerUps.DecreaseTimer;
+import com.gr02.BomberMania.model.game.PowerUps.PushBomb;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.Elements.Element;
 import com.gr02.BomberMania.viewer.Viewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneBombViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.AddOneExplosionRadiusViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.DecreaseTimerVIewer;
+import com.gr02.BomberMania.viewer.game.powerUps.PushBombViewer;
 import com.gr02.BomberMania.viewer.game.walls.BrickViewer;
 import com.gr02.BomberMania.viewer.game.walls.IndestructibleWallViewer;
 import com.gr02.BomberMania.viewer.game.walls.PowerUpWallViewer;
@@ -55,6 +57,10 @@ public class GameViewer extends Viewer<Arena> {
             if (element instanceof DecreaseTimer) {
                 ElementViewer<DecreaseTimer> viewer = new DecreaseTimerVIewer();
                 viewer.draw((DecreaseTimer) element, gui);
+            }
+            if (element instanceof PushBomb) {
+                ElementViewer<PushBomb> viewer = new PushBombViewer();
+                viewer.draw((PushBomb) element, gui);
             }
         }
     }
