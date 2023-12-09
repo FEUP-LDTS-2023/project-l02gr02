@@ -1,7 +1,7 @@
 package com.gr02.BomberMania.model.game;
 
-import com.gr02.BomberMania.model.game.Elements.BombInfo;
-import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.constraints.Positive;

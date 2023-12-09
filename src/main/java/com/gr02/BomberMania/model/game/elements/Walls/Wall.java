@@ -1,6 +1,6 @@
-package com.gr02.BomberMania.model.game.Elements.Walls;
+package com.gr02.BomberMania.model.game.elements.Walls;
 
-import com.gr02.BomberMania.model.game.Elements.Element;
+import com.gr02.BomberMania.model.game.elements.Element;
 
 public abstract class Wall extends Element {
     private final boolean destructible;

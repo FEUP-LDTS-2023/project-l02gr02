@@ -1,13 +1,15 @@
-package com.gr02.BomberMania.model.game.Elements;
+package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
+
+import static com.gr02.BomberMania.Game.FPS;
 
 public class Flame extends Element implements Timer {
 
     private int timer;
     public Flame(int x, int y) {
         super(x, y);
-        timer = 60;
+        timer = FPS;
     }
 
     public int getTimer() {

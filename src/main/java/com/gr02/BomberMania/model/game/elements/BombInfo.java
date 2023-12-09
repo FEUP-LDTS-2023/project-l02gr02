@@ -1,8 +1,6 @@
-package com.gr02.BomberMania.model.game.Elements;
+package com.gr02.BomberMania.model.game.elements;
 
-import com.gr02.BomberMania.Game;
-import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
-import com.gr02.BomberMania.model.game.Elements.Timer;
+import static com.gr02.BomberMania.Game.FPS;
 
 public class BombInfo implements Cloneable, Timer {
 
@@ -18,7 +16,7 @@ public class BombInfo implements Cloneable, Timer {
     }
 
     public BombInfo() {
-        this.timer = 5 * Game.FPS;
+        this.timer = 5 * FPS;
         this.explosionRadius = 1;
     }
 

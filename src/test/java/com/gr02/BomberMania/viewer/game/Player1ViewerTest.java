@@ -1,8 +1,8 @@
 package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.Elements.BombInfo;
-import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

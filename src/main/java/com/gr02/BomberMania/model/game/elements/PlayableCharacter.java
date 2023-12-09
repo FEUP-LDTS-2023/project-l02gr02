@@ -1,6 +1,6 @@
-package com.gr02.BomberMania.model.game.Elements;
+package com.gr02.BomberMania.model.game.elements;
 
-import com.gr02.BomberMania.Game;
+import static com.gr02.BomberMania.Game.FPS;
 
 public class PlayableCharacter extends Element {
     private boolean canPushBombs = false;
@@ -29,8 +29,8 @@ public class PlayableCharacter extends Element {
     }
 
     public void decreaseBombTimer() {
-        if (this.bombInfo.getTimer() > 2) {
-            this.bombInfo.setTimer(this.bombInfo.getTimer() - Game.FPS);
+        if (this.bombInfo.getTimer() > 2 * FPS) {
+            this.bombInfo.setTimer(this.bombInfo.getTimer() - FPS);
         }
     }
 
@@ -42,7 +42,7 @@ public class PlayableCharacter extends Element {
         return bombInfo;
     }
 
-    public boolean isCanPushBombs() {
+    public boolean canPushBombs() {
         return canPushBombs;
     }
 

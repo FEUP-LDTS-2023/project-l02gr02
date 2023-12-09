@@ -1,6 +1,6 @@
-package com.gr02.BomberMania.model.game.PowerUps;
+package com.gr02.BomberMania.model.game.powerUps;
 
-import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 
 public class PushBomb extends  PowerUp{
     public PushBomb(int x, int y) {

@@ -30,9 +30,9 @@ public interface GUI {
 
     void drawFlame(Position position);
 
-    void drawAddOneBomb(Position position);
+    void drawAddBomb(Position position);
 
-    void drawAddOneExplosionRadius(Position position);
+    void drawIncreaseExplosionRadius(Position position);
 
     void drawDecreaseTimer(Position position);
     void drawPushBomb(Position position);

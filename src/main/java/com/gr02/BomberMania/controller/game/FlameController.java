@@ -2,7 +2,7 @@ package com.gr02.BomberMania.controller.game;
 
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.Elements.Flame;
+import com.gr02.BomberMania.model.game.elements.Flame;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.menu.submenu.WinMenu;
 import com.gr02.BomberMania.states.menu.submenu.WinState;

@@ -1,15 +1,15 @@
 package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.PowerUps.AddOneBomb;
-import com.gr02.BomberMania.model.game.PowerUps.AddOneExplosionRadius;
-import com.gr02.BomberMania.model.game.PowerUps.DecreaseTimer;
-import com.gr02.BomberMania.model.game.PowerUps.PushBomb;
+import com.gr02.BomberMania.model.game.powerUps.AddBomb;
+import com.gr02.BomberMania.model.game.powerUps.IncreaseExplosionRadius;
+import com.gr02.BomberMania.model.game.powerUps.DecreaseTimer;
+import com.gr02.BomberMania.model.game.powerUps.PushBomb;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.game.Elements.Element;
+import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.viewer.Viewer;
-import com.gr02.BomberMania.viewer.game.powerUps.AddOneBombViewer;
-import com.gr02.BomberMania.viewer.game.powerUps.AddOneExplosionRadiusViewer;
+import com.gr02.BomberMania.viewer.game.powerUps.AddBombViewer;
+import com.gr02.BomberMania.viewer.game.powerUps.IncreaseExplosionRadiusViewer;
 import com.gr02.BomberMania.viewer.game.powerUps.DecreaseTimerVIewer;
 import com.gr02.BomberMania.viewer.game.powerUps.PushBombViewer;
 import com.gr02.BomberMania.viewer.game.walls.BrickViewer;
@@ -46,13 +46,13 @@ public class GameViewer extends Viewer<Arena> {
 
     private <T extends Element> void drawPowerUp(GUI gui, List<T> elements) {
         for (T element : elements) {
-            if (element instanceof AddOneBomb) {
-                ElementViewer<AddOneBomb> viewer = new AddOneBombViewer();
-                viewer.draw((AddOneBomb) element, gui);
+            if (element instanceof AddBomb) {
+                ElementViewer<AddBomb> viewer = new AddBombViewer();
+                viewer.draw((AddBomb) element, gui);
             }
-            if (element instanceof AddOneExplosionRadius) {
-                ElementViewer<AddOneExplosionRadius> viewer = new AddOneExplosionRadiusViewer();
-                viewer.draw((AddOneExplosionRadius) element, gui);
+            if (element instanceof IncreaseExplosionRadius) {
+                ElementViewer<IncreaseExplosionRadius> viewer = new IncreaseExplosionRadiusViewer();
+                viewer.draw((IncreaseExplosionRadius) element, gui);
             }
             if (element instanceof DecreaseTimer) {
                 ElementViewer<DecreaseTimer> viewer = new DecreaseTimerVIewer();

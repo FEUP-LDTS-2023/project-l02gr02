@@ -1,10 +1,10 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.gr02.BomberMania.model.game.Elements.BombInfo;
-import com.gr02.BomberMania.model.game.Elements.PlayableCharacter;
-import com.gr02.BomberMania.model.game.Elements.Walls.BrickWall;
-import com.gr02.BomberMania.model.game.Elements.Walls.IndestructibleWall;
-import com.gr02.BomberMania.model.game.Elements.Walls.PowerUpWall;
+import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.Walls.BrickWall;
+import com.gr02.BomberMania.model.game.elements.Walls.IndestructibleWall;
+import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
