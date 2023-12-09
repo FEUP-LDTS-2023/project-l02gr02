@@ -3,11 +3,12 @@ package com.gr02.BomberMania.viewer.menu.submenu;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.menu.MainMenu;
+import com.gr02.BomberMania.model.menu.submenu.InstructionsMenu;
 import com.gr02.BomberMania.viewer.Viewer;
 
-public class InstructionsMenuViewer extends Viewer<MainMenu> {
+public class InstructionsMenuViewer extends Viewer<InstructionsMenu> {
 
-    public InstructionsMenuViewer(MainMenu model) {
+    public InstructionsMenuViewer(InstructionsMenu model) {
         super(model);
     }
 
