@@ -12,8 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.gr02.BomberMania.Game.height;
+import static com.gr02.BomberMania.Game.width;
+
 public class LoaderArenaBuilder extends ArenaBuilder {
 
+    private int widthShift, heightShift;
     private final List<String> lines;
 
     private String getRandomLevel(String... levels) {
@@ -38,6 +42,8 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         } catch (NullPointerException e) {
             throw new IOException("Nível não encontrado: " + levelPath, e);
         }
+        widthShift = width/2 - getWidth()/2;
+        heightShift = height/2 - getHeight()/2;
     }
 
     public LoaderArenaBuilder(String level) throws IOException {
@@ -45,6 +51,8 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
 
         lines = readLines(br);
+        widthShift = width/2 - getWidth()/2;
+        heightShift = height/2 - getHeight()/2;
     }
 
 
@@ -73,7 +81,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'H') return new PlayableCharacter(x, y, new BombInfo());
+                if (line.charAt(x) == 'H') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo());
         }
         return null;
     }
@@ -82,7 +90,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'F') return new PlayableCharacter(x, y, new BombInfo());
+                if (line.charAt(x) == 'F') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo());
         }
         return null;
     }
@@ -93,7 +101,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == '#') walls.add(new IndestructibleWall(x, y));
+                if (line.charAt(x) == '#') walls.add(new IndestructibleWall(x + widthShift, y + heightShift));
         }
 
         return walls;
@@ -106,7 +114,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'B') walls.add(new BrickWall(x, y));
+                if (line.charAt(x) == 'B') walls.add(new BrickWall(x + widthShift, y + heightShift));
         }
 
         return walls;
@@ -118,7 +126,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'V') walls.add(new PowerUpWall(x, y));
+                if (line.charAt(x) == 'V') walls.add(new PowerUpWall(x + widthShift, y + heightShift));
         }
 
         return walls;

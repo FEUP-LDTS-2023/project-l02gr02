@@ -12,10 +12,10 @@ import java.net.URISyntaxException;
 public class Game {
     private final LanternaGUI gui;
     private State state;
-    public static final int FPS = 60;
+    public static final int FPS = 60, width = 40, height = 30;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
-        this.gui = new LanternaGUI(20, 20);
+        this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
     }
 

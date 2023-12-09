@@ -2,9 +2,11 @@ package com.gr02.BomberMania.viewer.menu.submenu;
 
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.model.menu.MainMenu;
 import com.gr02.BomberMania.model.menu.submenu.InstructionsMenu;
 import com.gr02.BomberMania.viewer.Viewer;
+
+import static com.gr02.BomberMania.Game.height;
+import static com.gr02.BomberMania.Game.width;
 
 public class InstructionsMenuViewer extends Viewer<InstructionsMenu> {
 
@@ -14,26 +16,28 @@ public class InstructionsMenuViewer extends Viewer<InstructionsMenu> {
 
     @Override
     protected void drawElements(GUI gui) {
-        gui.drawText(new Position(1, 1), "INSTRUCTIONS:", "#FFFFFF");
-        gui.drawText(new Position(2, 4), "Player 1:", "#88dad4");
-        gui.drawText(new Position(3, 6), "Movement:", "#FFFFFF");
-        gui.drawText(new Position(15, 6), "W", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(14, 7), "A", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(15, 7), "S", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(16, 7), "D", "#FFFFFF"); // up|left|down|right arrows
+        int heightShift = (int) (height * 0.1);
+        int widthShift = (int) (width * 0.3);
+        gui.drawText(new Position(width/2 - 6, 1 + heightShift), "INSTRUCTIONS", "#FFFFFF");
+        gui.drawText(new Position(2 + widthShift, 4 + heightShift), "Player 1:", "#88dad4");
+        gui.drawText(new Position(3 + widthShift, 6 + heightShift), "Movement:", "#FFFFFF");
+        gui.drawText(new Position(15 + widthShift, 6 + heightShift), "W", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(14 + widthShift, 7 + heightShift), "A", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(15 + widthShift, 7 + heightShift), "S", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(16 + widthShift, 7 + heightShift), "D", "#FFFFFF"); // up|left|down|right arrows
 
-        gui.drawText(new Position(3, 8), "Bomb: F", "#9F0000");
+        gui.drawText(new Position(3 + widthShift, 9 + heightShift), "Bomb: F", "#9F0000");
 
-        gui.drawText(new Position(2, 10), "Player 2:", "#fce97d");
-        gui.drawText(new Position(3, 12), "Movement:", "#FFFFFF");
-        gui.drawText(new Position(15, 12), "@", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(14, 13), "<", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(15, 13), "=", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(16, 13), ">", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(3, 14), "Bomb: P", "#9F0000");
+        gui.drawText(new Position(2 + widthShift, 11 + heightShift), "Player 2:", "#fce97d");
+        gui.drawText(new Position(3 + widthShift, 13 + heightShift), "Movement:", "#FFFFFF");
+        gui.drawText(new Position(15 + widthShift, 13 + heightShift), "@", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(14 + widthShift, 14 + heightShift), "<", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(15 + widthShift, 14 + heightShift), "=", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(16 + widthShift, 14 + heightShift), ">", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(3 + widthShift, 16 + heightShift), "Bomb: P", "#9F0000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++) {
-            gui.drawText(new Position(4, 17+i), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
+            gui.drawText(new Position(width/2 - 3, 19 + i + heightShift), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
         }
     }
 }
