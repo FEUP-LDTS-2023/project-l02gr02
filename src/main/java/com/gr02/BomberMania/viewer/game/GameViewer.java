@@ -27,12 +27,12 @@ public class GameViewer extends Viewer<Arena> {
     public void drawElements(GUI gui) {
         drawElements(gui, getModel().getIndestructibleWalls(), new IndestructibleWallViewer());
         drawElements(gui, getModel().getBrickWalls(), new BrickViewer());
+        drawElements(gui, getModel().getPowerUpWalls(), new PowerUpWallViewer());
         drawElement(gui, getModel().getPlayer1(), new Player1Viewer());
         drawElement(gui, getModel().getPlayer2(), new Player2Viewer());
+        drawPowerUp(gui, getModel().getPowerUps());
         drawElements(gui, getModel().getBombs(), new BombViewer());
         drawElements(gui, getModel().getFlames(), new FlameViewer());
-        drawElements(gui, getModel().getPowerUpWalls(), new PowerUpWallViewer());
-        drawPowerUp(gui, getModel().getPowerUps());
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {
