@@ -2,6 +2,8 @@ package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
+import com.gr02.BomberMania.viewer.game.BombViewer;
+import com.gr02.BomberMania.viewer.game.ElementViewer;
 
 public class Bomb extends Element {
     private BombInfo bombInfo;
@@ -73,5 +75,9 @@ public class Bomb extends Element {
             return true;
         }
         return false;
+    }
+
+    public <T extends Element> ElementViewer<T> getViewer() {
+        return (ElementViewer<T>) new BombViewer();
     }
 }

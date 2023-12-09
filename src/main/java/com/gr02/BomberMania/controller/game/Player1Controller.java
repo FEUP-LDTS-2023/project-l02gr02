@@ -13,53 +13,9 @@ import com.gr02.BomberMania.states.menu.MainMenuState;
 
 public class Player1Controller extends PlayableCharacterController {
     public Player1Controller(Arena arena) {
-        super(arena);
-
-    }
-    @Override
-    public void moveHeroLeft() {
-        moveHero(getModel().getPlayer1().getPosition().getLeft());
-    }
-    @Override
-    public void moveHeroRight() {
-        moveHero(getModel().getPlayer1().getPosition().getRight());
-    }
-    @Override
-    public void moveHeroUp() {
-        moveHero(getModel().getPlayer1().getPosition().getUp());
-    }
-    @Override
-    public void moveHeroDown() {
-        moveHero(getModel().getPlayer1().getPosition().getDown());
-    }
-    @Override
-    protected void moveHero(Position position) {
-        // Check if position is available
-        if (getModel().isEmpty(position)) {
-            getModel().getPlayer1().setPosition(position);
-            // Check if upgrades exist and consume them
-            PowerUp temp = getModel().checkForUpgrades(position);
-            if (temp != null) {
-                getModel().getPowerUps().remove(temp);
-                temp.execute(getModel().getPlayer1());
-            }
-        } else if (getModel().getPlayer1().canPushBombs()){
-            // If player can push bombs check if they exist in the position
-            Bomb bomb = getModel().checkForBombs(position);
-            if (bomb != null) {
-                if (bomb.push(getModel(), getModel().getPlayer1().getPosition()))
-                    getModel().getPlayer1().setPosition(position);
-            }
-        }
+        super(arena, arena.getPlayer1());
     }
 
-    @Override
-    protected void placeBomb() {
-        PlayableCharacter player = getModel().getPlayer1();
-        if (player.getNumberOfBombs() <= 0) return;
-        getModel().addBomb( new Bomb(player.getPosition().getX(), player.getPosition().getY(), (BombInfo) player.getBombInfo().clone()) );
-        player.decreaseNumberOfBombs();
-    }
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
         switch (action) {

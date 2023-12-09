@@ -81,7 +81,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'H') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo());
+                if (line.charAt(x) == 'H') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo(), 1);
         }
         return null;
     }
@@ -90,7 +90,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'F') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo());
+                if (line.charAt(x) == 'F') return new PlayableCharacter(x + widthShift, y + heightShift, new BombInfo(), 2);
         }
         return null;
     }

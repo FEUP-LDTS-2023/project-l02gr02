@@ -1,6 +1,8 @@
 package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
+import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.game.FlameViewer;
 
 import static com.gr02.BomberMania.Game.FPS;
 
@@ -24,5 +26,9 @@ public class Flame extends Element implements Timer {
             return true;
         }
         return false;
+    }
+
+    public <T extends Element> ElementViewer<T> getViewer() {
+        return (ElementViewer<T>) new FlameViewer();
     }
 }

@@ -1,8 +1,9 @@
 package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.Position;
+import com.gr02.BomberMania.viewer.game.ElementViewer;
 
-public class Element {
+public abstract class Element {
 
     private Position position;
 
@@ -17,4 +18,6 @@ public class Element {
     public void setPosition(Position position) {
         this.position = position;
     }
+
+    public abstract <T extends Element > ElementViewer<T> getViewer();
 }

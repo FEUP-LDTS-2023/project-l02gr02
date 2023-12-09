@@ -1,7 +1,10 @@
 package com.gr02.BomberMania.model.game.elements.Walls;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
+import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.powerUps.*;
+import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.game.walls.PowerUpWallViewer;
 
 import java.util.List;
 import java.util.Random;
@@ -32,5 +35,9 @@ public class PowerUpWall extends Wall{
             default:
                 break;
         }
+    }
+
+    public <T extends Element> ElementViewer<T> getViewer() {
+        return (ElementViewer<T>) new PowerUpWallViewer();
     }
 }

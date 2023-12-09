@@ -1,5 +1,9 @@
 package com.gr02.BomberMania.model.game.elements;
 
+import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.game.Player1Viewer;
+import com.gr02.BomberMania.viewer.game.Player2Viewer;
+
 import static com.gr02.BomberMania.Game.FPS;
 
 public class PlayableCharacter extends Element {
@@ -7,11 +11,14 @@ public class PlayableCharacter extends Element {
     private int numberOfBombs;
     private BombInfo bombInfo;
 
-    public PlayableCharacter(int x, int y, BombInfo bombInfo) {
+    private int playerNum;
+
+    public PlayableCharacter(int x, int y, BombInfo bombInfo, int playerNum) {
         super(x, y);
         this.bombInfo = bombInfo;
         this.numberOfBombs = 1;
         bombInfo.setPlayer(this);
+        this.playerNum = playerNum;
     }
 
     public void decreaseNumberOfBombs() {
@@ -48,5 +55,11 @@ public class PlayableCharacter extends Element {
 
     public void setCanPushBombs(boolean canPushBombs) {
         this.canPushBombs = canPushBombs;
+    }
+
+    public <T extends Element> ElementViewer<T> getViewer() {
+        if (playerNum == 1) {
+            return (ElementViewer<T>) new Player1Viewer();
+        } else return (ElementViewer<T>) new Player2Viewer();
     }
 }
