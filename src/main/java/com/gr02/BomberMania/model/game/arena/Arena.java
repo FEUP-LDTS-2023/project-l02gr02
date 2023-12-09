@@ -172,6 +172,14 @@ public class Arena {
             }
         }
 
+        // Checking if explosion hit dropped powerUp
+        List<PowerUp> powerUpsCopy = List.copyOf(getPowerUps());
+        for (PowerUp powerUp : powerUpsCopy) {
+            if (powerUp.getPosition().equals(position)) {
+                powerUps.remove(powerUp);
+            }
+        }
+
         return false;
     }
 }
