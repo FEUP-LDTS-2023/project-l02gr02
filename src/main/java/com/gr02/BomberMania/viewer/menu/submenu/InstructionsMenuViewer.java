@@ -27,17 +27,20 @@ public class InstructionsMenuViewer extends Viewer<InstructionsMenu> {
         gui.drawText(new Position(16 + widthShift, 7 + heightShift), "D", "#FFFFFF"); // up|left|down|right arrows
 
         gui.drawText(new Position(3 + widthShift, 9 + heightShift), "Bomb: F", "#9F0000");
+        gui.drawText(new Position(3 + widthShift, 10 + heightShift), "Detonator: E", "#9F0000");
 
-        gui.drawText(new Position(2 + widthShift, 11 + heightShift), "Player 2:", "#fce97d");
-        gui.drawText(new Position(3 + widthShift, 13 + heightShift), "Movement:", "#FFFFFF");
-        gui.drawText(new Position(15 + widthShift, 13 + heightShift), "@", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(14 + widthShift, 14 + heightShift), "<", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(15 + widthShift, 14 + heightShift), "=", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(16 + widthShift, 14 + heightShift), ">", "#FFFFFF"); // up|left|down|right arrows
-        gui.drawText(new Position(3 + widthShift, 16 + heightShift), "Bomb: P", "#9F0000");
+        gui.drawText(new Position(2 + widthShift, 12 + heightShift), "Player 2:", "#fce97d");
+        gui.drawText(new Position(3 + widthShift, 14 + heightShift), "Movement:", "#FFFFFF");
+        gui.drawText(new Position(15 + widthShift, 14 + heightShift), "@", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(14 + widthShift, 15 + heightShift), "<", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(15 + widthShift, 15 + heightShift), "=", "#FFFFFF"); // up|left|down|right arrows
+        gui.drawText(new Position(16 + widthShift, 15 + heightShift), ">", "#FFFFFF"); // up|left|down|right arrows
+
+        gui.drawText(new Position(3 + widthShift, 17 + heightShift), "Bomb: P", "#9F0000");
+        gui.drawText(new Position(3 + widthShift, 18 + heightShift), "Detonator: Ç", "#9F0000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++) {
-            gui.drawText(new Position(width/2 - 3, 19 + i + heightShift), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
+            gui.drawText(new Position(width/2 - 3, 20 + i + heightShift), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
         }
     }
 }
