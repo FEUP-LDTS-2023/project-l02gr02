@@ -12,7 +12,6 @@ import com.gr02.BomberMania.model.game.elements.Walls.Wall;
 import com.gr02.BomberMania.model.game.powerUps.*;
 
 import java.util.List;
-import java.util.Random;
 
 public class Arena {
     private final int height;

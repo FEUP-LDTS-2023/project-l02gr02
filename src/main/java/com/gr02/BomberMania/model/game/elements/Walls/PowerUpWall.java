@@ -16,7 +16,7 @@ public class PowerUpWall extends Wall{
 
     public void dropPowerup(Arena arena) {
         Random random = new Random();
-        int numeroAleatorio = random.nextInt(4) + 1;
+        int numeroAleatorio = random.nextInt(5) + 1;
         List<PowerUp> powerUps = arena.getPowerUps();
 
         switch (numeroAleatorio) {
@@ -32,11 +32,14 @@ public class PowerUpWall extends Wall{
             case 4:
                 powerUps.add(new PushBomb(getPosition().getX(), getPosition().getY()));
                 break;
+            case 5:
+                powerUps.add(new DetonateBomb(getPosition().getX(), getPosition().getY()));
+                break;
             default:
                 break;
         }
     }
-
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new PowerUpWallViewer();
     }

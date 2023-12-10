@@ -1,17 +1,22 @@
 package com.gr02.BomberMania.model.game.elements;
 
+import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 import com.gr02.BomberMania.viewer.game.Player1Viewer;
 import com.gr02.BomberMania.viewer.game.Player2Viewer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.gr02.BomberMania.Game.FPS;
 
 public class PlayableCharacter extends Element {
     private boolean canPushBombs = false;
+    private boolean canDetonateBombs = false;
     private int numberOfBombs;
     private BombInfo bombInfo;
-
     private int playerNum;
+    private List<DetonatorObserver> observers;
 
     public PlayableCharacter(int x, int y, BombInfo bombInfo, int playerNum) {
         super(x, y);
@@ -19,6 +24,7 @@ public class PlayableCharacter extends Element {
         this.numberOfBombs = 1;
         bombInfo.setPlayer(this);
         this.playerNum = playerNum;
+        observers = new ArrayList<>();
     }
 
     public void decreaseNumberOfBombs() {
@@ -57,6 +63,30 @@ public class PlayableCharacter extends Element {
         this.canPushBombs = canPushBombs;
     }
 
+    public boolean canDetonateBombs() {
+        return canDetonateBombs;
+    }
+
+    public void setCanDetonateBombs(boolean canDetonateBombs) {
+        this.canDetonateBombs = canDetonateBombs;
+    }
+
+    public void addObserver(DetonatorObserver bomb) {
+        observers.add(bomb);
+    }
+
+    public void removeObserver(DetonatorObserver bomb) {
+        observers.remove(bomb);
+    }
+
+    public void detonateBombs(Arena arena) {
+        List<DetonatorObserver> observersCopy = List.copyOf(observers);
+        for (DetonatorObserver bomb : observersCopy) {
+            bomb.explode(arena);
+        }
+    }
+
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         if (playerNum == 1) {
             return (ElementViewer<T>) new Player1Viewer();

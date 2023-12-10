@@ -28,6 +28,7 @@ public class Flame extends Element implements Timer {
         return false;
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new FlameViewer();
     }

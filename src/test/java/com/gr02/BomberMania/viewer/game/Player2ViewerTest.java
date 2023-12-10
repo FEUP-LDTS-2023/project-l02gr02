@@ -15,7 +15,7 @@ public class Player2ViewerTest {
     public void testDraw() {
         GUI gui = mock(GUI.class);
 
-        playableCharacter = new PlayableCharacter(10, 10, new BombInfo());
+        playableCharacter = new PlayableCharacter(10, 10, new BombInfo(), 2);
 
         Player2Viewer player2Viewer = new Player2Viewer();
 

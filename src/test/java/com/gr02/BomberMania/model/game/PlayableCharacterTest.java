@@ -12,7 +12,7 @@ public class PlayableCharacterTest {
 
     @Property
     void increaseNumberOfBombs(@ForAll @Positive int increase) {
-        PlayableCharacter character = new PlayableCharacter(0, 0, new BombInfo());
+        PlayableCharacter character = new PlayableCharacter(0, 0, new BombInfo(), 1);
         for (int i = 0; i < increase; i++) {
             character.increaseNumberOfBombs();
         }
@@ -22,7 +22,7 @@ public class PlayableCharacterTest {
 
     @Property
     void decreaseNumberofBombs(@ForAll @Positive int increase, @ForAll @Positive int decrease) {
-        PlayableCharacter character = new PlayableCharacter(0, 0, new BombInfo());
+        PlayableCharacter character = new PlayableCharacter(0, 0, new BombInfo(), 1);
         for (int i = 0; i < increase; i++) {
             character.increaseNumberOfBombs();
         }
