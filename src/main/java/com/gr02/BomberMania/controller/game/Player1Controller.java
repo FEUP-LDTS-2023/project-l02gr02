@@ -33,7 +33,7 @@ public class Player1Controller extends PlayableCharacterController {
                 placeBomb();
                 break;
             case DETONATE:
-                if (!getPlayer().canDetonateBombs()) getPlayer().detonateBombs(getModel());
+                if (getPlayer().canDetonateBombs()) getPlayer().detonateBombs(getModel());
                 break;
             default:
         }
