@@ -2,6 +2,7 @@ package com.gr02.BomberMania.model.game.arena;
 
 import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.Timer;
 import com.gr02.BomberMania.model.game.elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
@@ -130,5 +131,10 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         }
 
         return walls;
+    }
+
+    @Override
+    protected Timer createTimer() {
+        return new Timer(width/2 - 2, 1, 3 * 60 * 60);
     }
 }

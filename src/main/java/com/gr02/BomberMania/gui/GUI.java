@@ -39,5 +39,7 @@ public interface GUI {
 
     void drawDetonateBomb(Position position);
 
+    void drawTimer(Position position, int minutes, int seconds);
+
     enum ACTION { NONE, BACKTOMENU, SELECT, UP, RIGHT, DOWN, LEFT, BOMB, DETONATE, UP2, RIGHT2, DOWN2, LEFT2, BOMB2, DETONATE2}
 }

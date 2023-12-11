@@ -10,5 +10,6 @@ public abstract class Wall extends Element {
         this.destructible = destructible;
     }
 
+    @Override
     public abstract <T extends Element > ElementViewer<T> getViewer();
 }

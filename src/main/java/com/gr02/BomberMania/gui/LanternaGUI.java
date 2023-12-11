@@ -157,6 +157,14 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawTimer(Position position, int minutes, int seconds) {
+        drawCharacter(position.getX(), position.getY(), Character.forDigit(minutes, 10), "#FFFFFF");
+        drawCharacter(position.getX()+1, position.getY(), ':', "#FFFFFF");
+        drawCharacter(position.getX()+2, position.getY(), Character.forDigit(seconds/10, 10), "#FFFFFF");
+        drawCharacter(position.getX()+3, position.getY(), Character.forDigit(seconds%10, 10), "#FFFFFF");
+    }
+
+    @Override
     public void clear() {
         screen.clear();
     }

@@ -1,5 +1,6 @@
 package com.gr02.BomberMania.model.game.arena;
 
+import com.gr02.BomberMania.model.game.elements.Timer;
 import com.gr02.BomberMania.model.game.elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
@@ -19,6 +20,7 @@ public abstract class ArenaBuilder {
         arena.setBombs(new ArrayList<>());
         arena.setFlames(new ArrayList<>());
         arena.setPowerUps(new ArrayList<>());
+        arena.setTimer(createTimer());
         return arena;
     }
     protected abstract int getWidth();
@@ -28,5 +30,6 @@ public abstract class ArenaBuilder {
     protected abstract List<IndestructibleWall> createIndestructibleWalls();
     protected abstract List<BrickWall> createBrickWalls();
     protected abstract List<PowerUpWall> createPowerUpWalls();
+    protected abstract Timer createTimer();
 
 }

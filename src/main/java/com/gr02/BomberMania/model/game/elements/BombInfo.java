@@ -2,7 +2,7 @@ package com.gr02.BomberMania.model.game.elements;
 
 import static com.gr02.BomberMania.Game.FPS;
 
-public class BombInfo implements Cloneable, Timer {
+public class BombInfo implements Cloneable, Timed {
 
     private int timer;
     private int explosionRadius;

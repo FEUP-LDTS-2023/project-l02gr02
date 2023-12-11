@@ -22,6 +22,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getPowerUps());
         drawElements(gui, getModel().getBombs());
         drawElements(gui, getModel().getFlames());
+        drawElement(gui, getModel().getTimer(), new TimerViewer());
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements) {
