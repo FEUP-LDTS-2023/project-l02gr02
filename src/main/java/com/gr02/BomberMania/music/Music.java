@@ -33,6 +33,10 @@ public class Music {
         this.muted = muted;
     }
 
+    public FloatControl getfc() {
+        return fc;
+    }
+
     public void runMusic() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }

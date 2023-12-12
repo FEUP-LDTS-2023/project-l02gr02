@@ -13,6 +13,7 @@ public class Bomb extends Element {
         super(x, y);
         this.bombInfo = bombInfo;
         explosion = new Music("./src/main/resources/music/explosion.wav");
+        explosion.getfc().setValue(-10);
     }
 
     public BombInfo getBombInfo() {
