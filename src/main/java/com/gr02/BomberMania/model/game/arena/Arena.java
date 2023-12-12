@@ -1,10 +1,10 @@
 package com.gr02.BomberMania.model.game.arena;
 
-import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.elements.Bomb;
 import com.gr02.BomberMania.model.game.elements.Flame;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.Timer;
 import com.gr02.BomberMania.model.game.elements.Walls.BrickWall;
 import com.gr02.BomberMania.model.game.elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
@@ -12,7 +12,6 @@ import com.gr02.BomberMania.model.game.elements.Walls.Wall;
 import com.gr02.BomberMania.model.game.powerUps.*;
 
 import java.util.List;
-import java.util.Random;
 
 public class Arena {
     private final int height;
@@ -25,6 +24,8 @@ public class Arena {
     private List<Bomb> bombs;
     private List<Flame> flames;
     private List<PowerUp> powerUps;
+
+    private Timer timer;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -99,6 +100,14 @@ public class Arena {
 
     public void setPowerUps(List<PowerUp> powerUps) {
         this.powerUps = powerUps;
+    }
+
+    public Timer getTimer() {
+        return timer;
+    }
+
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
 
     public boolean isEmpty(Position position) {

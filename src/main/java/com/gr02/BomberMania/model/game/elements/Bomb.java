@@ -6,7 +6,7 @@ import com.gr02.BomberMania.music.Music;
 import com.gr02.BomberMania.viewer.game.BombViewer;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 
-public class Bomb extends Element {
+public class Bomb extends Element implements DetonatorObserver {
     private BombInfo bombInfo;
     private Music explosion;
     public Bomb(int x, int y, BombInfo bombInfo) {
@@ -24,10 +24,13 @@ public class Bomb extends Element {
         bombInfo.reduceTimer();
     }
 
+    @Override
     public void explode(Arena arena) {
         // Remove bomb from the board
         arena.getBombs().remove(this);
         explosion.play();
+        getBombInfo().getPlayer().removeObserver(this);
+
 
         // Propagate Explosion Flame
         // Propagating Flame to the right
@@ -82,6 +85,7 @@ public class Bomb extends Element {
         return false;
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new BombViewer();
     }

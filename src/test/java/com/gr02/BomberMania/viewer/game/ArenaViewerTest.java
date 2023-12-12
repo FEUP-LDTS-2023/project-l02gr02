@@ -15,7 +15,7 @@ public class ArenaViewerTest {
     void setUp() {
         arena = new Arena(10, 10);
         gui = Mockito.mock(GUI.class);
-        arena.setPlayer1(new PlayableCharacter(5, 8, new BombInfo()));
+        arena.setPlayer1(new PlayableCharacter(5, 8, new BombInfo(), 1));
     }
 
     //  TO DO:

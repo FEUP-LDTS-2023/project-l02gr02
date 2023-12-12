@@ -2,12 +2,7 @@ package com.gr02.BomberMania.controller.game;
 
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.model.game.elements.Bomb;
-import com.gr02.BomberMania.model.game.elements.BombInfo;
-import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.game.powerUps.PowerUp;
 import com.gr02.BomberMania.model.menu.MainMenu;
 import com.gr02.BomberMania.states.menu.MainMenuState;
 
@@ -36,6 +31,9 @@ public class Player2Controller extends PlayableCharacterController {
                 break;
             case BOMB2:
                 placeBomb();
+                break;
+            case DETONATE2:
+                if (getPlayer().canDetonateBombs()) getPlayer().detonateBombs(getModel());
                 break;
             default:
         }

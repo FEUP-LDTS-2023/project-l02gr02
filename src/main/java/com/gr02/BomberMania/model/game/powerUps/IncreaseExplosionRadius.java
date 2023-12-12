@@ -15,6 +15,7 @@ public class IncreaseExplosionRadius extends PowerUp {
         player.increaseOneExplosionRadius();
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new IncreaseExplosionRadiusViewer();
     }

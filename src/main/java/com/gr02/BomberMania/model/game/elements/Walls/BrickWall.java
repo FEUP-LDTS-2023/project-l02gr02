@@ -9,6 +9,7 @@ public class BrickWall extends Wall {
         super(x, y, true);
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new BrickViewer();
     }

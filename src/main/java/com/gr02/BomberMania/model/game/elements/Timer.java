@@ -1,5 +1,27 @@
 package com.gr02.BomberMania.model.game.elements;
 
-public interface Timer {
-    public void reduceTimer();
+import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.game.TimerViewer;
+
+public class Timer extends Element implements Timed{
+    private int timeRemaining;
+
+    public Timer(int x, int y, int timeRemaining) {
+        super(x, y);
+        this.timeRemaining = timeRemaining;
+    }
+
+    public int getTimeRemaining() {
+        return timeRemaining/60;
+    }
+
+    @Override
+    public void reduceTimer() {
+        timeRemaining--;
+    }
+
+    @Override
+    public <T extends Element> ElementViewer<T> getViewer() {
+        return (ElementViewer<T>) new TimerViewer();
+    }
 }

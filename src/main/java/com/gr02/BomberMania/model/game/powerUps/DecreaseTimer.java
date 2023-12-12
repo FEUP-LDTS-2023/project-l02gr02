@@ -14,6 +14,7 @@ public class DecreaseTimer extends PowerUp {
         player.decreaseBombTimer();
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new DecreaseTimerVIewer();
     }

@@ -6,7 +6,7 @@ import com.gr02.BomberMania.viewer.game.FlameViewer;
 
 import static com.gr02.BomberMania.Game.FPS;
 
-public class Flame extends Element implements Timer {
+public class Flame extends Element implements Timed {
 
     private int timer;
     public Flame(int x, int y) {
@@ -28,6 +28,7 @@ public class Flame extends Element implements Timer {
         return false;
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new FlameViewer();
     }

@@ -2,9 +2,7 @@ package com.gr02.BomberMania.controller.game;
 
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.game.elements.Bomb;
-import com.gr02.BomberMania.model.game.elements.BombInfo;
-import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
+import com.gr02.BomberMania.model.game.elements.*;
 import com.gr02.BomberMania.model.game.powerUps.PowerUp;
 
 
@@ -54,7 +52,9 @@ public abstract class PlayableCharacterController extends GameController {
 
     protected void placeBomb() {
         if (player.getNumberOfBombs() <= 0) return;
-        getModel().addBomb( new Bomb(player.getPosition().getX(), player.getPosition().getY(), (BombInfo) player.getBombInfo().clone()) );
+        Bomb bomb = new Bomb(player.getPosition().getX(), player.getPosition().getY(), (BombInfo) player.getBombInfo().clone());
+        getModel().addBomb(bomb);
+        player.addObserver(bomb);
         player.decreaseNumberOfBombs();
     }
 

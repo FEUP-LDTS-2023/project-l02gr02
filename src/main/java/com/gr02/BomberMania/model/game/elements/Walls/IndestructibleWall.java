@@ -9,6 +9,7 @@ public class IndestructibleWall extends Wall {
         super(x, y, false);
     }
 
+    @Override
     public <T extends Element> ElementViewer<T> getViewer() {
         return (ElementViewer<T>) new IndestructibleWallViewer();
     }

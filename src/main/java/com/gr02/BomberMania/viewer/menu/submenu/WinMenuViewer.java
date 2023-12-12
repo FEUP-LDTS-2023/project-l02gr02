@@ -15,7 +15,9 @@ public class WinMenuViewer extends Viewer<WinMenu> {
 
     @Override
     protected void drawElements(GUI gui) {
-        gui.drawText(new Position(width/2 - 7, (int) (height * 0.2)), "PLAYER " + getModel().getPlayerNumber() + " WINS!", "#FFFFFF");
+        if (getModel().getPlayerNumber() == 1)
+            gui.drawText(new Position(width/2 - 7, (int) (height * 0.2)), "PLAYER " + getModel().getPlayerNumber() + " WINS!", "#88DAD4");
+        else gui.drawText(new Position(width/2 - 7, (int) (height * 0.2)), "PLAYER " + getModel().getPlayerNumber() + " WINS!", "#FCE97D");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++) {
             gui.drawText(new Position(5, (int) (height * 0.5) + i*3), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");

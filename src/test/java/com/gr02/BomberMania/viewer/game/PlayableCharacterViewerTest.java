@@ -15,7 +15,7 @@ public class PlayableCharacterViewerTest {
 
     @BeforeEach
     void setUp() {
-        playableCharacter = new PlayableCharacter(10, 10, new BombInfo());
+        playableCharacter = new PlayableCharacter(10, 10, new BombInfo(), 1);
         viewer = new Player1Viewer();
         gui = Mockito.mock(GUI.class);
     }
