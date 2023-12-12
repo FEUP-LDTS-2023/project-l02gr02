@@ -2,14 +2,17 @@ package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
+import com.gr02.BomberMania.music.Music;
 import com.gr02.BomberMania.viewer.game.BombViewer;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 
 public class Bomb extends Element {
     private BombInfo bombInfo;
+    private Music explosion;
     public Bomb(int x, int y, BombInfo bombInfo) {
         super(x, y);
         this.bombInfo = bombInfo;
+        explosion = new Music("./src/main/resources/music/explosion.wav");
     }
 
     public BombInfo getBombInfo() {
@@ -23,6 +26,7 @@ public class Bomb extends Element {
     public void explode(Arena arena) {
         // Remove bomb from the board
         arena.getBombs().remove(this);
+        explosion.play();
 
         // Propagate Explosion Flame
         // Propagating Flame to the right

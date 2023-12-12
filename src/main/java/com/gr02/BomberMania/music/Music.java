@@ -8,16 +8,18 @@ import java.io.File;
 
 public class Music {
     protected Clip clip;
-    protected Clip explosion;
+    private float currentVolume = 0;
+    private float previousVolume = 0;
     protected FloatControl fc;
     private boolean muted = false;
 
-    public Music() {
+    public Music(String path) {
         try {
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("./src/main/resources/music/myimmortal.wav"));
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
             clip = AudioSystem.getClip();
             clip.open(inputStream);
             fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,7 +38,22 @@ public class Music {
     }
 
     public void play(){
-        explosion.setFramePosition(0);
-        explosion.start();
+        clip.setFramePosition(0);
+        clip.start();
+    }
+
+    public void volumeMusicMute(){
+        if (!isMuted()) {
+            previousVolume = currentVolume;
+            currentVolume = -80.0f;
+            fc.setValue(currentVolume);
+            muted = true;
+        }
+        else {
+            currentVolume = previousVolume;
+            fc.setValue(currentVolume);
+            muted = false;
+        }
+
     }
 }
