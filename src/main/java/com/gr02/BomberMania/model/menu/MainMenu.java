@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MainMenu extends Menu {
 
     public MainMenu() {
-        super(Arrays.asList("Start", "Instructions", "Exit", "Mute Music"));
+        super(Arrays.asList("Start", "Instructions", "Mute Music", "Exit"));
     }
 
     public boolean isSelectedStart() {
@@ -16,11 +16,11 @@ public class MainMenu extends Menu {
         return isSelected(1);
     }
 
-    public boolean isSelectedExit() {
+    public boolean isSelectedMuteMusic() {
         return isSelected(2);
     }
-    public boolean isSelectedMuteMusic() {
+
+    public boolean isSelectedExit() {
         return isSelected(3);
     }
-
 }
