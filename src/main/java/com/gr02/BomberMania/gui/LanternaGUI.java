@@ -123,7 +123,7 @@ public class LanternaGUI implements GUI {
     }
     @Override
     public void drawPowerUpWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'V', "#BC4A3C");
+        drawCharacter(position.getX(), position.getY(), '#', "#FFD700");
     }
 
     @Override
@@ -136,32 +136,33 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawAddBomb(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'X', "#FF0000");
+        drawCharacter(position.getX(), position.getY(), '+', "#FFD700");
     }
     @Override
     public void drawIncreaseExplosionRadius(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'Z', "#FF0000");
+        drawCharacter(position.getX(), position.getY(), ';', "#FFD700");
     }
     @Override
     public void drawDecreaseTimer(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'C', "#FF0000");
+        drawCharacter(position.getX(), position.getY(), '$', "#FFD700");
     }
     @Override
     public void drawPushBomb(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'N', "#FF0000");
+        drawCharacter(position.getX(), position.getY(), '}', "#FFD700");
     }
 
     @Override
     public void drawDetonateBomb(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'D', "#FF0000");
+        drawCharacter(position.getX(), position.getY(), '_', "#FFD700");
     }
 
     @Override
     public void drawTimer(Position position, int minutes, int seconds) {
-        drawCharacter(position.getX(), position.getY(), Character.forDigit(minutes, 10), "#FFFFFF");
-        drawCharacter(position.getX()+1, position.getY(), ':', "#FFFFFF");
-        drawCharacter(position.getX()+2, position.getY(), Character.forDigit(seconds/10, 10), "#FFFFFF");
-        drawCharacter(position.getX()+3, position.getY(), Character.forDigit(seconds%10, 10), "#FFFFFF");
+        drawCharacter(position.getX(), position.getY(), '{', "#FFFFFF");
+        drawCharacter(position.getX()+1, position.getY(), Character.forDigit(minutes, 10), "#FFFFFF");
+        drawCharacter(position.getX()+2, position.getY(), ':', "#FFFFFF");
+        drawCharacter(position.getX()+3, position.getY(), Character.forDigit(seconds/10, 10), "#FFFFFF");
+        drawCharacter(position.getX()+4, position.getY(), Character.forDigit(seconds%10, 10), "#FFFFFF");
     }
 
     @Override

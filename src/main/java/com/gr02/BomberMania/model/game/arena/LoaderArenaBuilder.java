@@ -135,6 +135,6 @@ public class LoaderArenaBuilder extends ArenaBuilder {
 
     @Override
     protected Timer createTimer() {
-        return new Timer(width/2 - 2, 1, 3 * 60 * 60);
+        return new Timer(width/2 - 3, 1, 3 * 60 * 60);
     }
 }
