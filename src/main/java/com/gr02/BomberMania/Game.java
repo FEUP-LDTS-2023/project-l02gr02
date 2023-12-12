@@ -19,7 +19,7 @@ public class Game {
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
-        this.music = new Music("./src/main/resources/music/myimmortal.wav");
+        this.music = new Music("./src/main/resources/music/battle.wav");
         music.runMusic();
 
     }
