@@ -37,7 +37,7 @@ public class InstructionsMenuViewer extends Viewer<InstructionsMenu> {
         gui.drawText(new Position(16 + widthShift, 15 + heightShift), ">", "#FFFFFF"); // up|left|down|right arrows
 
         gui.drawText(new Position(3 + widthShift, 17 + heightShift), "Bomb: P", "#9F0000");
-        gui.drawText(new Position(3 + widthShift, 18 + heightShift), "Detonator: ~", "#9F0000");
+        gui.drawText(new Position(3 + widthShift, 18 + heightShift), "Detonator: O", "#9F0000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++) {
             gui.drawText(new Position(width/2 - 3, 20 + i + heightShift), getModel().getEntry(i), getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");

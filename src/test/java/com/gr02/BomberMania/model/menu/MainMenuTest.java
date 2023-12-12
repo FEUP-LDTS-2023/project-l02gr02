@@ -29,14 +29,14 @@ public class MainMenuTest {
         MainMenu menu = new MainMenu();
         Assertions.assertEquals(0, menu.getCurrentEntry());
         menu.previousEntry();
-        Assertions.assertEquals(2, menu.getCurrentEntry());
+        Assertions.assertEquals(3, menu.getCurrentEntry());
         menu.previousEntry();
-        Assertions.assertEquals(1, menu.getCurrentEntry());
+        Assertions.assertEquals(2, menu.getCurrentEntry());
 
         for (int k = 0; k < menu.getNumberEntries(); k++) {
             menu.previousEntry();
         }
-        Assertions.assertEquals(1, menu.getCurrentEntry());
+        Assertions.assertEquals(2, menu.getCurrentEntry());
     }
 }
 
