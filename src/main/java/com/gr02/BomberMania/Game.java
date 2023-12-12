@@ -2,6 +2,7 @@ package com.gr02.BomberMania;
 
 import com.gr02.BomberMania.gui.LanternaGUI;
 import com.gr02.BomberMania.model.menu.MainMenu;
+import com.gr02.BomberMania.music.Music;
 import com.gr02.BomberMania.states.menu.MainMenuState;
 import com.gr02.BomberMania.states.State;
 
@@ -13,10 +14,14 @@ public class Game {
     private final LanternaGUI gui;
     private State state;
     public static final int FPS = 60, width = 40, height = 30;
+    private Music music;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
+        this.music = new Music();
+        music.runMusic();
+
     }
 
     public static void main(String[] args) throws FontFormatException, IOException, URISyntaxException {
@@ -46,5 +51,13 @@ public class Game {
         }
 
         gui.close();
+    }
+
+    public Music getMusic() {
+        return music;
+    }
+
+    public void setMusic(Music music) {
+        this.music = music;
     }
 }
