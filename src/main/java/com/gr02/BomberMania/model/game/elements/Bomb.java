@@ -1,5 +1,6 @@
 package com.gr02.BomberMania.model.game.elements;
 
+import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.music.Sound;
@@ -8,13 +9,10 @@ import com.gr02.BomberMania.viewer.game.ElementViewer;
 
 public class Bomb extends Element implements DetonatorObserver {
     private BombInfo bombInfo;
-    private Sound explosion;
+
     public Bomb(int x, int y, BombInfo bombInfo) {
         super(x, y);
         this.bombInfo = bombInfo;
-        explosion = new Sound("./src/main/resources/music/explosion.wav");
-        if (explosion.getfc() != null) explosion.getfc().setValue(-10);
-
     }
 
     public BombInfo getBombInfo() {
@@ -29,7 +27,7 @@ public class Bomb extends Element implements DetonatorObserver {
     public void explode(Arena arena) {
         // Remove bomb from the board
         arena.getBombs().remove(this);
-        explosion.play();
+        Game.explosion.play();
         getBombInfo().getPlayer().removeObserver(this);
 
 
