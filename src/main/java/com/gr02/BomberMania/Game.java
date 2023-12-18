@@ -14,13 +14,17 @@ public class Game {
     private final LanternaGUI gui;
     private State state;
     public static final int FPS = 60, width = 40, height = 30;
-    private Sound sound;
+    private Sound music;
+    public static Sound explosion;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
-        this.sound = new Sound("./src/main/resources/music/battle.wav");
-        sound.runMusic();
+        this.music = new Sound("./src/main/resources/music/battle.wav");
+        music.runMusic();
+
+        this.explosion = new Sound("./src/main/resources/music/explosion.wav");
+        if (explosion.getfc() != null) explosion.getfc().setValue(-10);
 
     }
 
@@ -54,10 +58,10 @@ public class Game {
     }
 
     public Sound getMusic() {
-        return sound;
+        return music;
     }
 
     public void setMusic(Sound sound) {
-        this.sound = sound;
+        this.music = sound;
     }
 }
