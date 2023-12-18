@@ -30,7 +30,7 @@ public class MainMenuController extends Controller<MainMenu> {
                 if (getModel().isSelectedStart()) game.setState(new MapMenuState(new MapMenu()));
                 if (getModel().isSelectedInstruction()) game.setState(new InstructionsMenuState(new InstructionsMenu()));
                 if (getModel().isSelectedMuteMusic()) {
-                    game.getMusic().volumeMusicMute();
+                    game.getMusic().volumeSoundMute();
                 }
                 break;
             default:

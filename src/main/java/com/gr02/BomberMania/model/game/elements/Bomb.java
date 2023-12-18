@@ -2,18 +2,22 @@ package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.music.Music;
+import com.gr02.BomberMania.music.Sound;
 import com.gr02.BomberMania.viewer.game.BombViewer;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 
 public class Bomb extends Element implements DetonatorObserver {
     private BombInfo bombInfo;
-    private Music explosion;
+    private Sound explosion;
     public Bomb(int x, int y, BombInfo bombInfo) {
         super(x, y);
         this.bombInfo = bombInfo;
-        explosion = new Music("./src/main/resources/music/explosion.wav");
-        explosion.getfc().setValue(-10);
+        explosion = new Sound("./src/main/resources/music/explosion.wav");
+        if (explosion.getfc() != null) {
+            explosion.getfc().setValue(0.5f);
+        } else {
+            System.err.println("can't acess float control");
+        }
     }
 
     public BombInfo getBombInfo() {

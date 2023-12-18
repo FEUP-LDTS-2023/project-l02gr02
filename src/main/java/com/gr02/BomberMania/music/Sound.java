@@ -6,14 +6,14 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import java.io.File;
 
-public class Music {
+public class Sound {
     protected Clip clip;
     private float currentVolume = 0;
     private float previousVolume = 0;
     protected FloatControl fc;
     private boolean muted = false;
 
-    public Music(String path) {
+    public Sound(String path) {
         try {
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
             clip = AudioSystem.getClip();
@@ -41,12 +41,16 @@ public class Music {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
-    public void play(){
-        clip.setFramePosition(0);
-        clip.start();
+    public void play() {
+        try {
+            clip.setFramePosition(0);
+            clip.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void volumeMusicMute(){
+    public void volumeSoundMute(){
         if (!isMuted()) {
             previousVolume = currentVolume;
             currentVolume = -80.0f;
