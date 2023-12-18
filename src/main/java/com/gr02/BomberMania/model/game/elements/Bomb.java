@@ -13,11 +13,8 @@ public class Bomb extends Element implements DetonatorObserver {
         super(x, y);
         this.bombInfo = bombInfo;
         explosion = new Sound("./src/main/resources/music/explosion.wav");
-        if (explosion.getfc() != null) {
-            explosion.getfc().setValue(0.5f);
-        } else {
-            System.err.println("can't acess float control");
-        }
+        if (explosion.getfc() != null) explosion.getfc().setValue(-10);
+
     }
 
     public BombInfo getBombInfo() {
