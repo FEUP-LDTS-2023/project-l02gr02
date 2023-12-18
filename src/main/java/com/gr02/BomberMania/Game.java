@@ -2,7 +2,7 @@ package com.gr02.BomberMania;
 
 import com.gr02.BomberMania.gui.LanternaGUI;
 import com.gr02.BomberMania.model.menu.MainMenu;
-import com.gr02.BomberMania.music.Music;
+import com.gr02.BomberMania.music.Sound;
 import com.gr02.BomberMania.states.menu.MainMenuState;
 import com.gr02.BomberMania.states.State;
 
@@ -14,13 +14,13 @@ public class Game {
     private final LanternaGUI gui;
     private State state;
     public static final int FPS = 60, width = 40, height = 30;
-    private Music music;
+    private Sound sound;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
-        this.music = new Music("./src/main/resources/music/battle.wav");
-        music.runMusic();
+        this.sound = new Sound("./src/main/resources/music/battle.wav");
+        sound.runMusic();
 
     }
 
@@ -53,11 +53,11 @@ public class Game {
         gui.close();
     }
 
-    public Music getMusic() {
-        return music;
+    public Sound getMusic() {
+        return sound;
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setMusic(Sound sound) {
+        this.sound = sound;
     }
 }
