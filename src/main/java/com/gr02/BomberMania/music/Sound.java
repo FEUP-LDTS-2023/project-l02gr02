@@ -12,23 +12,14 @@ public class Sound {
     private boolean muted = false;
 
     public Sound(String path) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        try {
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
-            clip = AudioSystem.getClip();
-            clip.open(inputStream);
-            fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-
-        } catch (Exception e) {
-            throw e;
-        }
+        AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
+        clip = AudioSystem.getClip();
+        clip.open(inputStream);
+        fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
     }
 
     public boolean isMuted() {
         return muted;
-    }
-
-    public void setMuted(boolean muted) {
-        this.muted = muted;
     }
 
     public FloatControl getfc() {
@@ -40,12 +31,8 @@ public class Sound {
     }
 
     public void play() {
-        try {
-            clip.setFramePosition(0);
-            clip.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        clip.setFramePosition(0);
+        clip.start();
     }
 
     public void volumeSoundMute(){
