@@ -25,6 +25,9 @@ public class Sound {
     public FloatControl getfc() {
         return fc;
     }
+    public float getCurrentVolume() {
+        return currentVolume;
+    }
 
     public void runMusic() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -38,7 +41,7 @@ public class Sound {
     public void volumeSoundMute(){
         if (!isMuted()) {
             previousVolume = currentVolume;
-            currentVolume = -80.0f;
+            currentVolume = fc.getMinimum();
             fc.setValue(currentVolume);
             muted = true;
         }
