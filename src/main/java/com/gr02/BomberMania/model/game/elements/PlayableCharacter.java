@@ -80,9 +80,8 @@ public class PlayableCharacter extends Element {
     }
 
     public void detonateBombs(Arena arena) {
-        List<DetonatorObserver> observersCopy = List.copyOf(observers);
-        for (DetonatorObserver bomb : observersCopy) {
-            bomb.explode(arena);
+        while (!observers.isEmpty()) {
+            observers.get(0).explode(arena);
         }
     }
 

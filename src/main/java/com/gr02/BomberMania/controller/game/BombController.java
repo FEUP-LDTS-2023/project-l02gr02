@@ -20,7 +20,7 @@ public class BombController extends GameController {
         for (Bomb bomb : bombsCopy) {
             bomb.reduceTimer();
             if (bomb.getBombInfo().getTimer() <= 0) {
-                bomb.explode(getModel());
+                if (getModel().getBombs().contains(bomb)) bomb.explode(getModel());
             }
         }
     }
