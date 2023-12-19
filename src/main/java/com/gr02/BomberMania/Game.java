@@ -6,6 +6,8 @@ import com.gr02.BomberMania.music.Sound;
 import com.gr02.BomberMania.states.menu.MainMenuState;
 import com.gr02.BomberMania.states.State;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -17,18 +19,23 @@ public class Game {
     private Sound music;
     public static Sound explosion;
 
-    public Game() throws FontFormatException, IOException, URISyntaxException {
+    static {
+        try {
+            explosion = new Sound("./src/main/resources/music/explosion.wav");
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Game() throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         this.gui = new LanternaGUI(width, height);
         this.state = new MainMenuState(new MainMenu());
         this.music = new Sound("./src/main/resources/music/battle.wav");
         music.runMusic();
-
-        this.explosion = new Sound("./src/main/resources/music/explosion.wav");
         if (explosion.getfc() != null) explosion.getfc().setValue(-10);
-
     }
 
-    public static void main(String[] args) throws FontFormatException, IOException, URISyntaxException {
+    public static void main(String[] args) throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         new Game().start();
     }
 
