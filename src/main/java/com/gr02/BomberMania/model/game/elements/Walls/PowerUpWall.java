@@ -3,8 +3,8 @@ package com.gr02.BomberMania.model.game.elements.Walls;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.powerUps.*;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
-import com.gr02.BomberMania.viewer.game.walls.PowerUpWallViewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
+import com.gr02.BomberMania.viewer.walls.PowerUpWallViewer;
 
 import java.util.List;
 import java.util.Random;

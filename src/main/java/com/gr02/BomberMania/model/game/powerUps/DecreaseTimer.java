@@ -2,8 +2,8 @@ package com.gr02.BomberMania.model.game.powerUps;
 
 import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
-import com.gr02.BomberMania.viewer.game.powerUps.DecreaseTimerVIewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
+import com.gr02.BomberMania.viewer.powerUps.DecreaseTimerVIewer;
 
 public class DecreaseTimer extends PowerUp {
     public DecreaseTimer(int x, int y) {

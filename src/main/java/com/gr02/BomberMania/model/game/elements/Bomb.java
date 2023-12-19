@@ -3,8 +3,8 @@ package com.gr02.BomberMania.model.game.elements;
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.viewer.game.BombViewer;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.BombViewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
 
 public class Bomb extends Element implements DetonatorObserver, Timed {
     private BombInfo bombInfo;

@@ -1,8 +1,8 @@
-package com.gr02.BomberMania.viewer.game.powerUps;
+package com.gr02.BomberMania.viewer.powerUps;
 
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.powerUps.AddBomb;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
 
 public class AddBombViewer implements ElementViewer<AddBomb> {
     @Override

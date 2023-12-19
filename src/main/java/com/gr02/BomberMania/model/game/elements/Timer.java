@@ -1,7 +1,7 @@
 package com.gr02.BomberMania.model.game.elements;
 
-import com.gr02.BomberMania.viewer.game.ElementViewer;
-import com.gr02.BomberMania.viewer.game.TimerViewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
+import com.gr02.BomberMania.viewer.TimerViewer;
 
 public class Timer extends Element implements Timed{
     private int timeRemaining;
