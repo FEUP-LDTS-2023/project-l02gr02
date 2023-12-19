@@ -17,6 +17,6 @@ public class TimerController extends GameController {
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
 
         if (getModel().getTimer().getTimeRemaining() > 0) getModel().getTimer().reduceTimer();
-        else game.setState(new DrawState(new DrawMenu()));
+        else game.setState(new DrawState(new DrawMenu("TIME IS UP!")));
     }
 }

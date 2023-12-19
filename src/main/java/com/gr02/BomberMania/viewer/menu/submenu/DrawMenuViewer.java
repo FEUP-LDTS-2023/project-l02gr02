@@ -15,7 +15,7 @@ public class DrawMenuViewer extends Viewer<DrawMenu> {
 
     @Override
     protected void drawElements(GUI gui) {
-        gui.drawText(new Position(width/2 - 5, (int) (height * 0.2)), "TIME IS UP!", "#FFFFFF");
+        gui.drawText(new Position(width/2 - 5, (int) (height * 0.2)), getModel().getDrawReason(), "#FFFFFF");
         gui.drawText(new Position(width/2 - 2, (int) (height * 0.2)+1), "DRAW!", "#FFFFFF");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++) {

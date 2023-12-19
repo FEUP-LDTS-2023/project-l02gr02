@@ -6,8 +6,11 @@ import java.util.Arrays;
 
 public class DrawMenu extends Menu {
 
-    public DrawMenu() {
+    String drawReason;
+
+    public DrawMenu(String reason) {
         super(Arrays.asList("Replay", "Main Menu", "Exit"));
+        drawReason = reason;
     }
 
     public boolean isSelectedReplay() {
@@ -20,6 +23,10 @@ public class DrawMenu extends Menu {
 
     public boolean isSelectedExit() {
         return isSelected(2);
+    }
+
+    public String getDrawReason() {
+        return drawReason;
     }
 }
 
