@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class PowerUpWall extends Wall{
     public PowerUpWall(int x, int y) {
-        super(x, y, true);
+        super(x, y);
     }
 
     public void dropPowerup(Arena arena) {

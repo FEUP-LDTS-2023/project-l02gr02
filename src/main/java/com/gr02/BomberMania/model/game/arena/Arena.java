@@ -11,6 +11,7 @@ import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
 import com.gr02.BomberMania.model.game.elements.Walls.Wall;
 import com.gr02.BomberMania.model.game.powerUps.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Arena {
@@ -30,6 +31,9 @@ public class Arena {
     public Arena(int width, int height) {
         this.width = width;
         this.height = height;
+        this.bombs = new ArrayList<>();
+        this.flames = new ArrayList<>();
+        this.powerUps = new ArrayList<>();
     }
 
     public int getWidth() {
@@ -159,6 +163,7 @@ public class Arena {
         return true;
     }
 
+    // Destroys objects and returns true if the object destructed stops the flame from spreading
     public boolean destruct(Position position) {
         // Checking if explosion hit a destructible wall
         for (Wall wall : brickWalls)

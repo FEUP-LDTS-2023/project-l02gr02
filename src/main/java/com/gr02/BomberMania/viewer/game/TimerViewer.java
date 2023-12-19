@@ -1,7 +1,6 @@
 package com.gr02.BomberMania.viewer.game;
 
 import com.gr02.BomberMania.gui.GUI;
-import com.gr02.BomberMania.model.game.elements.Flame;
 import com.gr02.BomberMania.model.game.elements.Timer;
 
 public class TimerViewer implements ElementViewer<Timer> {

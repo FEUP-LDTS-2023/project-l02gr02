@@ -3,11 +3,10 @@ package com.gr02.BomberMania.model.game.elements;
 import com.gr02.BomberMania.Game;
 import com.gr02.BomberMania.model.Position;
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.music.Sound;
 import com.gr02.BomberMania.viewer.game.BombViewer;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 
-public class Bomb extends Element implements DetonatorObserver {
+public class Bomb extends Element implements DetonatorObserver, Timed {
     private BombInfo bombInfo;
 
     public Bomb(int x, int y, BombInfo bombInfo) {
@@ -19,6 +18,7 @@ public class Bomb extends Element implements DetonatorObserver {
         return bombInfo;
     }
 
+    @Override
     public void reduceTimer() {
         bombInfo.reduceTimer();
     }
@@ -29,7 +29,6 @@ public class Bomb extends Element implements DetonatorObserver {
         arena.getBombs().remove(this);
         Game.explosion.play();
         getBombInfo().getPlayer().removeObserver(this);
-
 
         // Propagate Explosion Flame
         // Propagating Flame to the right

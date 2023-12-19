@@ -6,7 +6,6 @@ import com.gr02.BomberMania.model.game.elements.Walls.IndestructibleWall;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ArenaBuilder {
@@ -17,9 +16,6 @@ public abstract class ArenaBuilder {
         arena.setIndestructibleWalls(createIndestructibleWalls());
         arena.setBrickWalls(createBrickWalls());
         arena.setPowerUpWalls(createPowerUpWalls());
-        arena.setBombs(new ArrayList<>());
-        arena.setFlames(new ArrayList<>());
-        arena.setPowerUps(new ArrayList<>());
         arena.setTimer(createTimer());
         return arena;
     }

@@ -4,10 +4,8 @@ import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.viewer.game.ElementViewer;
 
 public abstract class Wall extends Element {
-    private final boolean destructible;
-    public Wall(int x, int y, boolean destructible) {
+    public Wall(int x, int y) {
         super(x, y);
-        this.destructible = destructible;
     }
 
     @Override

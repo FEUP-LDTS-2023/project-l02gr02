@@ -9,12 +9,15 @@ import com.gr02.BomberMania.model.game.elements.Walls.PowerUpWall;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import static com.gr02.BomberMania.Game.height;
 import static com.gr02.BomberMania.Game.width;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class LoaderArenaBuilder extends ArenaBuilder {
 
@@ -36,7 +39,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         String levelPath = "/levels/" + randomLevel;
 
         try (InputStream inputStream = LoaderArenaBuilder.class.getResourceAsStream(levelPath);
-             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, UTF_8);
              BufferedReader br = new BufferedReader(inputStreamReader)) {
 
             lines = readLines(br);
@@ -49,7 +52,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
 
     public LoaderArenaBuilder(String level) throws IOException {
         URL resource = LoaderArenaBuilder.class.getResource("/levels/" + level);
-        BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
+        BufferedReader br = Files.newBufferedReader(Paths.get(resource.getFile()), UTF_8);
 
         lines = readLines(br);
         widthShift = width/2 - getWidth()/2;

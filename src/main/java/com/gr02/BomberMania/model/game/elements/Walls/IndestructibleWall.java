@@ -6,7 +6,7 @@ import com.gr02.BomberMania.viewer.game.walls.IndestructibleWallViewer;
 
 public class IndestructibleWall extends Wall {
     public IndestructibleWall(int x, int y) {
-        super(x, y, false);
+        super(x, y);
     }
 
     @Override
