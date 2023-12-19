@@ -25,7 +25,6 @@ public class Arena {
     private List<Bomb> bombs;
     private List<Flame> flames;
     private List<PowerUp> powerUps;
-
     private Timer timer;
 
     public Arena(int width, int height) {

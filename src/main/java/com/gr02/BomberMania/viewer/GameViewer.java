@@ -3,6 +3,8 @@ package com.gr02.BomberMania.viewer;
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.elements.Element;
+import com.gr02.BomberMania.viewer.players.Player1Viewer;
+import com.gr02.BomberMania.viewer.players.Player2Viewer;
 
 import java.util.List;
 
