@@ -1,10 +1,8 @@
 package com.gr02.BomberMania.music;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
+import javax.sound.sampled.*;
 import java.io.File;
+import java.io.IOException;
 
 public class Sound {
     protected Clip clip;
@@ -13,7 +11,7 @@ public class Sound {
     protected FloatControl fc;
     private boolean muted = false;
 
-    public Sound(String path) {
+    public Sound(String path) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         try {
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
             clip = AudioSystem.getClip();
@@ -21,7 +19,7 @@ public class Sound {
             fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
     }
 
