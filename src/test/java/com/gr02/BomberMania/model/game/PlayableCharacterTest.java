@@ -4,8 +4,6 @@ import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.elements.Bomb;
 import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
-import com.gr02.BomberMania.viewer.ElementViewer;
-import com.gr02.BomberMania.viewer.players.Player1Viewer;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.constraints.IntRange;
