@@ -11,7 +11,7 @@ public class PowerUpsTests {
     AddBombViewer addBombViewer;
     AddBomb addBomb;
 
-    DecreaseTimerVIewer decreaseTimerVIewer;
+    DecreaseTimerViewer decreaseTimerViewer;
     DecreaseTimer decreaseTimer;
     DetonateBombViewer detonateBombViewer;
     DetonateBomb detonateBomb;
@@ -28,7 +28,7 @@ public class PowerUpsTests {
         addBombViewer = new AddBombViewer();
 
         decreaseTimer = new DecreaseTimer(0,1);
-        decreaseTimerVIewer = new DecreaseTimerVIewer();
+        decreaseTimerViewer = new DecreaseTimerViewer();
 
         detonateBomb = new DetonateBomb(0,2);
         detonateBombViewer = new DetonateBombViewer();
@@ -47,7 +47,7 @@ public class PowerUpsTests {
     }
     @Test
     public void DecreaseTimerTest() {
-        decreaseTimerVIewer.draw(decreaseTimer, gui);
+        decreaseTimerViewer.draw(decreaseTimer, gui);
         Mockito.verify(gui, Mockito.times(1)).drawDecreaseTimer(decreaseTimer.getPosition());
     }
     @Test

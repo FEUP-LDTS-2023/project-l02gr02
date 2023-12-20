@@ -2,6 +2,7 @@ package com.gr02.BomberMania.viewer;
 
 import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import com.gr02.BomberMania.viewer.players.Player2Viewer;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ public class Player2ViewerTest {
 
         playableCharacter = new PlayableCharacter(10, 10, new BombInfo(), 2);
 
-        Player2Viewer player2Viewer = new Player2Viewer();
+        ElementViewer<Element> player2Viewer = playableCharacter.getViewer();
 
         player2Viewer.draw(playableCharacter, gui);
 

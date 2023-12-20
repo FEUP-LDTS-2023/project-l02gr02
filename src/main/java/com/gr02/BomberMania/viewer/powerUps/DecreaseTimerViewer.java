@@ -4,7 +4,7 @@ import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.powerUps.DecreaseTimer;
 import com.gr02.BomberMania.viewer.ElementViewer;
 
-public class DecreaseTimerVIewer implements ElementViewer<DecreaseTimer> {
+public class DecreaseTimerViewer implements ElementViewer<DecreaseTimer> {
     @Override
     public void draw(DecreaseTimer element, GUI gui) {
         gui.drawDecreaseTimer(element.getPosition());

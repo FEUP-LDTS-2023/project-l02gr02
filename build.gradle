@@ -1,11 +1,11 @@
 plugins {
     id 'java'
     id 'application'
-    id 'info.solidsoft.pitest' version '1.6.0'
+    id 'info.solidsoft.pitest' version '1.7.0'
     id "org.kordamp.gradle.errorprone" version "0.50.0"
 }
 
-group = 'BomberMania'
+group = 'com.gr02.BomberMania'
 version = '1.0-SNAPSHOT'
 
 repositories {
