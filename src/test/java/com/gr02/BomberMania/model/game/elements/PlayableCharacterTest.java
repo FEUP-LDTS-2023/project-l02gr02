@@ -1,4 +1,4 @@
-package com.gr02.BomberMania.model.game;
+package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.game.elements.Bomb;

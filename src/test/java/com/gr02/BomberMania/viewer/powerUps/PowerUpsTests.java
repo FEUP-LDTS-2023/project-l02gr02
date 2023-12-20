@@ -1,23 +1,24 @@
 package com.gr02.BomberMania.viewer.powerUps;
 
 import com.gr02.BomberMania.gui.GUI;
+import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.powerUps.*;
+import com.gr02.BomberMania.viewer.ElementViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 public class PowerUpsTests {
     GUI gui;
-    AddBombViewer addBombViewer;
+    ElementViewer<Element> addBombViewer;
     AddBomb addBomb;
-
-    DecreaseTimerViewer decreaseTimerViewer;
+    ElementViewer<Element>decreaseTimerViewer;
     DecreaseTimer decreaseTimer;
-    DetonateBombViewer detonateBombViewer;
+    ElementViewer<Element>detonateBombViewer;
     DetonateBomb detonateBomb;
-    IncreaseExplosionRadiusViewer increaseExplosionRadiusViewer;
+    ElementViewer<Element> increaseExplosionRadiusViewer;
     IncreaseExplosionRadius increaseExplosionRadius;
-    PushBombViewer pushBombViewer;
+    ElementViewer<Element> pushBombViewer;
     PushBomb pushBomb;
 
     @BeforeEach
@@ -25,19 +26,19 @@ public class PowerUpsTests {
         gui = Mockito.mock(GUI.class);
 
         addBomb = new AddBomb(0,0);
-        addBombViewer = new AddBombViewer();
+        addBombViewer = addBomb.getViewer();
 
         decreaseTimer = new DecreaseTimer(0,1);
-        decreaseTimerViewer = new DecreaseTimerViewer();
+        decreaseTimerViewer = decreaseTimer.getViewer();
 
         detonateBomb = new DetonateBomb(0,2);
-        detonateBombViewer = new DetonateBombViewer();
+        detonateBombViewer = detonateBomb.getViewer();
 
         increaseExplosionRadius = new IncreaseExplosionRadius(0,3);
-        increaseExplosionRadiusViewer = new IncreaseExplosionRadiusViewer();
+        increaseExplosionRadiusViewer = increaseExplosionRadius.getViewer();
 
         pushBomb = new PushBomb(0,4);
-        pushBombViewer = new PushBombViewer();
+        pushBombViewer = pushBomb.getViewer();
     }
 
     @Test

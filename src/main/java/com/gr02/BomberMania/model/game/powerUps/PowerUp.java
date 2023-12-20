@@ -10,6 +10,5 @@ public abstract class PowerUp extends Element {
     }
     public abstract void execute(PlayableCharacter player);
     @Override
-
     public abstract <T extends Element > ElementViewer<T> getViewer();
 }
