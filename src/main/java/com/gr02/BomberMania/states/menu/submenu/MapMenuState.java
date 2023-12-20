@@ -14,10 +14,10 @@ public class MapMenuState extends State<MapMenu> {
     }
 
     @Override
-    protected Viewer<MapMenu> getViewer() { return new MapMenuViewer(getModel()); }
+    public Viewer<MapMenu> getViewer() { return new MapMenuViewer(getModel()); }
 
     @Override
-    protected Controller<MapMenu> getController() {
+    public Controller<MapMenu> getController() {
         return new MapMenuController(getModel());
     }
 }

@@ -12,12 +12,12 @@ public class DrawState extends State<DrawMenu> {
         super(model);
     }
     @Override
-    protected Viewer<DrawMenu> getViewer() {
+    public Viewer<DrawMenu> getViewer() {
         return new DrawMenuViewer(getModel());
     }
 
     @Override
-    protected Controller<DrawMenu> getController() {
+    public Controller<DrawMenu> getController() {
         return new DrawMenuController(getModel());
     }
 }

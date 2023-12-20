@@ -12,12 +12,12 @@ public class WinState extends State<WinMenu> {
         super(model);
     }
     @Override
-    protected Viewer<WinMenu> getViewer() {
+    public Viewer<WinMenu> getViewer() {
         return new WinMenuViewer(getModel());
     }
 
     @Override
-    protected Controller<WinMenu> getController() {
+    public Controller<WinMenu> getController() {
         return new WinMenuController(getModel());
     }
 }

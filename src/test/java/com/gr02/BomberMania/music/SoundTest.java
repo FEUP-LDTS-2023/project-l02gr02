@@ -15,7 +15,6 @@ import static org.mockito.Mockito.times;
 
 public class SoundTest {
     Sound sound;
-    Sound ErrorSound;
     Clip clip;
     FloatControl fc;
 
@@ -32,10 +31,8 @@ public class SoundTest {
     public void isMutedTest() {
         Assertions.assertEquals(false, sound.isMuted());
         sound.volumeSoundMute();
-        Assertions.assertEquals(sound.getfc().getMinimum(),sound.getCurrentVolume());
         Assertions.assertEquals(true,sound.isMuted());
         sound.volumeSoundMute();
-        Assertions.assertEquals(0,sound.getCurrentVolume());
         Assertions.assertEquals(false, sound.isMuted());
     }
 
@@ -52,4 +49,8 @@ public class SoundTest {
         Mockito.verify(clip,times(1)).setFramePosition(0);
     }
 
+    @Test
+    public void getFCTest() {
+        Assertions.assertEquals(fc, sound.getfc());
+    }
 }

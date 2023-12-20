@@ -6,8 +6,6 @@ import java.io.IOException;
 
 public class Sound {
     protected Clip clip;
-    private float currentVolume = 0;
-    private float previousVolume = 0;
     protected FloatControl fc;
     private boolean muted = false;
 
@@ -25,9 +23,6 @@ public class Sound {
     public FloatControl getfc() {
         return fc;
     }
-    public float getCurrentVolume() {
-        return currentVolume;
-    }
 
     public void runMusic() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -40,14 +35,11 @@ public class Sound {
 
     public void volumeSoundMute(){
         if (!isMuted()) {
-            previousVolume = currentVolume;
-            currentVolume = fc.getMinimum();
-            fc.setValue(currentVolume);
+            fc.setValue(fc.getMinimum());
             muted = true;
         }
         else {
-            currentVolume = previousVolume;
-            fc.setValue(currentVolume);
+            fc.setValue(0);
             muted = false;
         }
 
