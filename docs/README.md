@@ -8,37 +8,29 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 #### Main Menu
 - Start Game - Allows the player to start the game.
+- Instructions - Shows the player the instructions of the game, such as movements keys, placing bombs and using some of the powerups.
 - Exit - Closes the game.
 
 ![img](gifs/menu.gif)
 
-### PLANNED FEATURES
+#### In Game
 
-- Placing bombs:
-  
-![img](gifs/drop.gif)
-
-- Death for bomb explosion:
-  
-![img](gifs/death.gif)
-
-- Breaking wall with bombs (explosion trail stops in unbreakable walls):
-  
-![img](gifs/breakingWall.gif)
-
+- Placing bombs - The player can place bombs in the arena.
+- Death for bomb explosion - If caught by the fire trail, the player automatically get killed.
+- Breaking wall with bombs (explosion trail stops in unbreakable walls)
 - 2-Player Mode - Engage in a head-to-head gameplay with a friend.
 - Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
-- Portal - Transports the hero and triggered bombs to another location.
 - Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact.
-- Chain Reaction Bomb - Imediatlly explodes a nearly bomb
+- Chain Reaction Bomb - Immediately explodes a nearly bomb
 - Directional Explosion Bomb - Explodes in the same direction it is placed.
 - Select map - Allows the player to choose between multiple maps.
-
-#### Core Game
-- Health - The player's hit points, enables the player to take damage, and on reaching 0, finishes the game.
-- Bomb - Enables the player to deploy explosive devices strategically.
 - Collision - Ensures the player cannot pass through undesired elements within the game environment.
 - Movement - Allows the player to move the hero character.
+
+### PLANNED FEATURES
+
+- Portal - Transports the hero and triggered bombs to another location.
+- Health - The player's hit points, enables the player to take damage, and on reaching 0, finishes the game.
 
 ### DESIGN
 
@@ -68,9 +60,10 @@ The following figure shows how the pattern’s roles were mapped to the applicat
 - Allows continuous updating of the game state, facilitating dynamic and evolving gameplay.
 - Enhances code clarity and maintainability by streamlining the logic and reducing clutter within the module classes.
 
-#### INPUT SHOULD BEHAVE DIFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
+#### INPUT SHOULD BEHAVE DIFFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
 
 **Problem in Context**
+
 To ensure the proper response from the input taking into account the different situations the naive aproach would use scattered conditional logic which would inevitably violate the Single Responsability Principle.
 
 **The Pattern**
@@ -87,10 +80,10 @@ The following figure shows how the pattern’s roles were mapped to the applicat
 
 The use of the State Pattern in the current design allows the following benefits:
 
-. It provide a systematic and loosely coupled way to to change the behavior of an object based on its state.
-- It becomes easier to add new states if nedeed.
+- It provides a systematic and loosely coupled way to change the behavior of an object based on its state.
+- It becomes easier to add new states if needed.
 
- #### State should not be concerned with wich Viewer and Controller it is created
+#### State should not be concerned with which Viewer and Controller it is created
 
 **Problem in Context**
 
@@ -108,12 +101,56 @@ The following figure shows how the pattern’s roles were mapped to the states c
 
 **Consequences**
 
-The use of the State Pattern in the current design allows the following benefits:
+The use of the Factory Pattern in the current design allows the following benefits:
 
 - It simplifies the logic within the state classes, removing the need to create specific instances of objects.
 - Promotes cleaner and more maintainable code.
 - Facilitates code extension to add new states since the object creation logic is encapsulated in the factories and can be extended without modifying existing state classes.
 - The downside is that the code may become longer due to the introduction of additional classes for the factories. Nevertheless, the maintenance and extensibility benefits typically outweigh this drawback.
+
+#### POWER-UPS FUNCTIONALITY
+
+**Problem in Context**
+
+Within the power-ups system of our Bomberman-style game, maintaining consistent functionality across various power-up types became a significant challenge. The initial design lacked a systematic approach, resulting in duplicated code and potential violations of the Open-Closed Principle.
+
+**The Pattern**
+
+To address the inconsistency in power-up functionality while adhering to the Open-Closed Principle, we applied the Command pattern. This pattern encapsulates requests as objects, allowing us to parameterize clients with different power-up commands. By doing so, we promote a more modular and extensible design.
+
+**Implementation**
+
+The class diagram below illustrates how the Command pattern was integrated into our power-up system.
+
+**Consequences**
+
+Adopting the Command Pattern in our power-up design provides the following benefits:
+
+- Encapsulation: Power-up commands encapsulate specific behaviors, decoupling them from the power-up objects.
+- Flexibility: New power-up commands can be added without modifying existing code, promoting an open-closed design.
+- Maintainability: Code becomes more modular, and changes to individual power-up behaviors do not impact other parts of the system.
+
+#### PLAYABLE CHARACTER DETONATOR
+
+**Problem in Context**
+
+In our Bomberman-style game, we faced the challenge of efficiently notifying detonators about the detonation request initiated by a playable character. The existing implementation relied on a direct method call, leading to tight coupling and potential scalability issues.
+
+**The Pattern**
+
+To address this issue and promote a loosely coupled design, we introduced the Observer pattern. This pattern defines a one-to-many dependency between objects, ensuring that when one object changes its state, all its dependents are notified and updated automatically. In this case, the PlayableCharacter serves as the subject, and detonators act as observers.
+
+**Implementation**
+
+The class diagram below illustrates how the Observer pattern was applied to enhance the detonation mechanism.
+
+**Consequences**
+
+By applying the Observer Pattern in our detonation system, we achieve the following benefits:
+
+- Loose Coupling: PlayableCharacter and detonators are decoupled, promoting better maintainability and flexibility.
+- Scalability: New detonators can be added without modifying existing code, facilitating the addition of diverse bomb behaviors.
+- Notification: Detonators are automatically notified of detonation requests, ensuring a streamlined and extensible system.
 
 #### KNOWN CODE SMELLS
 
