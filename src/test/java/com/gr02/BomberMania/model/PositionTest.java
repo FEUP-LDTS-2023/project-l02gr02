@@ -1,7 +1,11 @@
 package com.gr02.BomberMania.model;
 
+import com.gr02.BomberMania.model.game.elements.Bomb;
+import com.gr02.BomberMania.model.game.elements.BombInfo;
+import com.gr02.BomberMania.model.game.elements.Walls.BrickWall;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,5 +33,16 @@ class PositionTest {
     void getDown(@ForAll int x, @ForAll int y) {
         assertEquals(x, new Position(x, y).getDown().getX());
         assertEquals(y + 1, new Position(x, y).getDown().getY());
+    }
+
+    @Test
+    void equalsTest() {
+        Position a = new Position(0, 0);
+        Position b = new Position(0, 0);
+        assertEquals(true, a.equals(b));
+        b.setPosition(1, 1);
+        assertEquals(false, a.equals(b));
+        b = null;
+        assertEquals(false, a.equals(b));
     }
 }
