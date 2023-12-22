@@ -26,10 +26,10 @@ public class FlameController extends GameController {
         for (Flame flame : flamesCopy) {
             flame.reduceTimer();
             // Checking Player hits
-            if (flame.checkHit(getModel(), getModel().getPlayer1())) {
+            if (flame.checkHit(getModel().getPlayer1())) {
                 player1Hit = true;
             }
-            if (flame.checkHit(getModel(), getModel().getPlayer2())) {
+            if (flame.checkHit(getModel().getPlayer2())) {
                 player2Hit = true;
             }
             if (flame.getTimer() <= 0) {

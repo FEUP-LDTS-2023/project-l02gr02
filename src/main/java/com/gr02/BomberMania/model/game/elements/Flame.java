@@ -21,7 +21,7 @@ public class Flame extends Element implements Timed {
     @Override
     public void reduceTimer() { timer--;}
 
-    public boolean checkHit(Arena arena, PlayableCharacter player) {
+    public boolean checkHit(PlayableCharacter player) {
         if (player.getPosition().equals(getPosition())) {
             return true;
         }

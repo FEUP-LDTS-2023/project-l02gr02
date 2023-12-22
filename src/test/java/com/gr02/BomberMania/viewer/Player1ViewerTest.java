@@ -4,7 +4,6 @@ import com.gr02.BomberMania.gui.GUI;
 import com.gr02.BomberMania.model.game.elements.BombInfo;
 import com.gr02.BomberMania.model.game.elements.Element;
 import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
-import com.gr02.BomberMania.viewer.players.Player1Viewer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

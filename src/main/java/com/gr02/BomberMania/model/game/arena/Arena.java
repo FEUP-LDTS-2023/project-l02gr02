@@ -30,9 +30,12 @@ public class Arena {
     public Arena(int width, int height) {
         this.width = width;
         this.height = height;
-        this.bombs = new ArrayList<>();
-        this.flames = new ArrayList<>();
-        this.powerUps = new ArrayList<>();
+        this.bombs = new ArrayList<Bomb>();
+        this.flames = new ArrayList<Flame>();
+        this.powerUps = new ArrayList<PowerUp>();
+        this.indestructibleWalls = new ArrayList<IndestructibleWall>();
+        this.brickWalls = new ArrayList<BrickWall>();
+        this.powerUpWalls = new ArrayList<PowerUpWall>();
     }
 
     public int getWidth() {

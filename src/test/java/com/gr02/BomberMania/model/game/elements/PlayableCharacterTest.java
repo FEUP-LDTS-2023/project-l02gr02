@@ -1,9 +1,6 @@
 package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.model.game.elements.Bomb;
-import com.gr02.BomberMania.model.game.elements.BombInfo;
-import com.gr02.BomberMania.model.game.elements.PlayableCharacter;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.constraints.IntRange;
@@ -97,6 +94,7 @@ public class PlayableCharacterTest {
         if (character.canDetonateBombs()) character.detonateBombs(arena);
         Mockito.verify(bomb1, Mockito.never()).explode(arena);
         Mockito.verify(bomb2, Mockito.never()).explode(arena);
+
         // Player gains powerup and detonates bombs
         character.setCanDetonateBombs(true);
         if (character.canDetonateBombs()) character.detonateBombs(arena);

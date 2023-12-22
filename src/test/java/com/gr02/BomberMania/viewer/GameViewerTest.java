@@ -35,7 +35,7 @@ public class GameViewerTest {
         arena.setPowerUps(Arrays.asList(new AddBomb(10, 15)));
         arena.setBombs(Arrays.asList(new Bomb(10, 16, new BombInfo())));
         arena.setFlames(Arrays.asList(new Flame(10, 17)));
-        arena.setTimer(new Timer(10, 18, 1));
+        arena.setTimer(new Timer(10, 18, 90*60));
     }
 
     @Test
@@ -49,5 +49,6 @@ public class GameViewerTest {
         Mockito.verify(gui, Mockito.times(1)).drawAddBomb(new Position(10, 15));
         Mockito.verify(gui, Mockito.times(1)).drawBomb(new Position(10, 16));
         Mockito.verify(gui, Mockito.times(1)).drawFlame(new Position(10, 17));
+        Mockito.verify(gui, Mockito.times(1)).drawTimer(new Position(10, 18), 1, 30);
     }
 }

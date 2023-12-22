@@ -36,15 +36,15 @@ public class Bomb extends Element implements DetonatorObserver, Timed {
             if (!propagating(arena, new Position(getPosition().getX() + i, getPosition().getY()))) break;
         }
         // Propagating Flame to the left
-        for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
+        for (int i = 1; i <= getBombInfo().getExplosionRadius(); i++) {
             if (!propagating(arena, new Position(getPosition().getX() - i, getPosition().getY()))) break;
         }
         // Propagating Flame Down
-        for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
+        for (int i = 1; i <= getBombInfo().getExplosionRadius(); i++) {
             if (!propagating(arena, new Position(getPosition().getX(), getPosition().getY() + i))) break;
         }
         // Propagating Flame Up
-        for (int i = 0; i <= getBombInfo().getExplosionRadius(); i++) {
+        for (int i = 1; i <= getBombInfo().getExplosionRadius(); i++) {
             if (!propagating(arena, new Position(getPosition().getX(), getPosition().getY() - i))) break;
         }
 
@@ -52,7 +52,7 @@ public class Bomb extends Element implements DetonatorObserver, Timed {
         getBombInfo().getPlayer().increaseNumberOfBombs();
     }
 
-    private boolean propagating(Arena arena, Position position) {
+    public boolean propagating(Arena arena, Position position) {
         if (arena.isNotIndestructible(position)) {
             arena.addFlame(new Flame(position.getX(), position.getY()));
             if (arena.destruct(position))
