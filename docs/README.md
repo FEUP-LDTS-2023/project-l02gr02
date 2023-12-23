@@ -49,7 +49,7 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 ![img](gifs/detonateBomb.gif)
 
-#### Death for bomb explosion
+##### Death for bomb explosion
 
 ![img](gifs/death.gif)
 
@@ -86,7 +86,7 @@ The following figure shows how the pattern’s roles were mapped to the applicat
 - Allows continuous updating of the game state, facilitating dynamic and evolving gameplay.
 - Enhances code clarity and maintainability by streamlining the logic and reducing clutter within the module classes.
 
-#### INPUT SHOULD BEHAVE DIFFERENTLY DEPENDING ON ITS CURRENTLY BEING VIEWED (MENU OR GAME)
+#### Input should behave differently depending on its currently being viewed (menu or game)
 
 **Problem in Context**
 
@@ -134,7 +134,7 @@ The use of the Factory Pattern in the current design allows the following benefi
 - Facilitates code extension to add new states since the object creation logic is encapsulated in the factories and can be extended without modifying existing state classes.
 - The downside is that the code may become longer due to the introduction of additional classes for the factories. Nevertheless, the maintenance and extensibility benefits typically outweigh this drawback.
 
-#### POWER-UPS FUNCTIONALITY
+#### Power-ups functionality
 
 **Problem in Context**
 
@@ -158,7 +158,7 @@ Adopting the Command Pattern in our power-up design provides the following benef
 - Flexibility: New power-up commands can be added without modifying existing code, promoting an open-closed design.
 - Maintainability: Code becomes more modular, and changes to individual power-up behaviors do not impact other parts of the system.
 
-#### PLAYABLE CHARACTER DETONATOR
+#### Playable character detonator
 
 **Problem in Context**
 
