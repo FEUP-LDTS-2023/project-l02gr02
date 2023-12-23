@@ -91,4 +91,8 @@ public class PlayableCharacter extends Element {
             return (ElementViewer<T>) new Player1Viewer();
         } else return (ElementViewer<T>) new Player2Viewer();
     }
+
+    public List<DetonatorObserver> getObservers() {
+        return observers;
+    }
 }

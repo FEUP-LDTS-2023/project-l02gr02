@@ -7,7 +7,7 @@ public class TimerViewer implements ElementViewer<Timer> {
 
     @Override
     public void draw(Timer timer, GUI gui) {
-        int minutes = timer.getTimeRemaining()/60, seconds = timer.getTimeRemaining() % 60;
+        int minutes = timer.getTimeRemaining()/(60*60), seconds = (timer.getTimeRemaining()/60) % 60;
         gui.drawTimer(timer.getPosition(), minutes, seconds);
     }
 }

@@ -7,9 +7,6 @@ import com.gr02.BomberMania.model.game.arena.Arena;
 import com.gr02.BomberMania.model.menu.MainMenu;
 import com.gr02.BomberMania.model.menu.submenu.MapMenu;
 import com.gr02.BomberMania.states.State;
-import com.gr02.BomberMania.states.game.GameState;
-import com.gr02.BomberMania.states.menu.MainMenuState;
-import com.gr02.BomberMania.states.menu.submenu.MapMenuState;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

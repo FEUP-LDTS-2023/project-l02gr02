@@ -9,7 +9,7 @@ public class TimerTest {
     void reduceTimerTest() {
         Timer timer = new Timer(0, 0, 60);
 
-        assertEquals(1, timer.getTimeRemaining());
+        assertEquals(1, timer.getTimeRemaining()/60);
 
         for (int i = 0; i < 60; i++) {
             timer.reduceTimer();

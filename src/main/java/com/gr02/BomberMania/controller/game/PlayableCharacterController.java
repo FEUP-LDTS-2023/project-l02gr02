@@ -51,7 +51,9 @@ public abstract class PlayableCharacterController extends GameController {
     }
 
     protected void placeBomb() {
-        if (player.getNumberOfBombs() <= 0) return;
+        if (player.getNumberOfBombs() < 1) return;
+        Bomb aux = getModel().checkForBombs(new Position(player.getPosition().getX(), player.getPosition().getY()));
+        if (aux != null) return;
         Bomb bomb = new Bomb(player.getPosition().getX(), player.getPosition().getY(), (BombInfo) player.getBombInfo().clone());
         getModel().addBomb(bomb);
         player.addObserver(bomb);

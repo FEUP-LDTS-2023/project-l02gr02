@@ -12,7 +12,7 @@ public class Timer extends Element implements Timed{
     }
 
     public int getTimeRemaining() {
-        return timeRemaining/60;
+        return timeRemaining;
     }
 
     @Override
