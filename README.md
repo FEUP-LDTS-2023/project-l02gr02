@@ -10,25 +10,46 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 #### Main Menu
 - Start Game - Allows the player to start the game.
+- Instructions - Shows the player the instructions of the game, such as movements keys, placing bombs and using some of the powerups.
+- Mute Music - Turn off music sound.
 - Exit - Closes the game.
 
-### PLANNED FEATURES
-- Placing bombs:
-- Death for bomb explosion
+![img](/docs/gifs/menu.gif)
+
+#### Map Menu
+
+![img](/docs/imgs/MapMenu.png)
+
+#### In Game
+
+- Placing bombs - The player can place bombs in the arena.
+- Death for bomb explosion - If caught by the fire trail, the player automatically get killed.
 - Breaking wall with bombs (explosion trail stops in unbreakable walls)
 - 2-Player Mode - Engage in a head-to-head gameplay with a friend.
 - Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
-- Portal - Transports the hero and triggered bombs to another location.
 - Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact.
-- Chain Reaction Bomb - Imediatlly explodes a nearly bomb
+- Chain Reaction Bomb - Immediately explodes a nearly bomb
 - Directional Explosion Bomb - Explodes in the same direction it is placed.
 - Select map - Allows the player to choose between multiple maps.
-
-#### Core Game
-- Health - The player's hit points, enables the player to take damage, and on reaching 0, finishes the game.
-- Bomb - Enables the player to deploy explosive devices strategically.
 - Collision - Ensures the player cannot pass through undesired elements within the game environment.
 - Movement - Allows the player to move the hero character.
+
+##### Visualiser
+
+![img](/docs/gifs/Visualiser.gif)
+
+##### Push Bombs
+
+![img](/docs/gifs/pushBomb.gif)
+
+##### Detonate Bombs
+
+![img](/docs/gifs/detonateBomb.gif)
+
+##### Death for bomb explosion
+
+![img](/docs/gifs/death.gif)
+
 
 ### SELF-EVALUATION
 - Afonso Machado: 1/3

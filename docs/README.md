@@ -193,6 +193,10 @@ The approach emphasized Property Based Testing, systematically validating functi
 Additionally, Mocks were strategically used in draw methods to confirm executions. 
 This focused strategy aimed to deliver a robust test suite, showcasing the team's commitment to thorough validation and ensuring the resilience of the codebase.
 
+### Screenshot of coverage report
+
+![img](imgs/coverage.png)
+
 ### SELF-EVALUATION
 
 - Afonso Machado: 1/3
