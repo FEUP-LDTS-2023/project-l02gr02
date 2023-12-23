@@ -1,9 +1,9 @@
 package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.game.arena.Arena;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
-import com.gr02.BomberMania.viewer.game.Player1Viewer;
-import com.gr02.BomberMania.viewer.game.Player2Viewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
+import com.gr02.BomberMania.viewer.players.Player1Viewer;
+import com.gr02.BomberMania.viewer.players.Player2Viewer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,5 +90,9 @@ public class PlayableCharacter extends Element {
         if (playerNum == 1) {
             return (ElementViewer<T>) new Player1Viewer();
         } else return (ElementViewer<T>) new Player2Viewer();
+    }
+
+    public List<DetonatorObserver> getObservers() {
+        return observers;
     }
 }

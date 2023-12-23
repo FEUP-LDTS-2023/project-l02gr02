@@ -15,12 +15,12 @@ public class InstructionsMenuState extends State<InstructionsMenu> {
     }
 
     @Override
-    protected Viewer<InstructionsMenu> getViewer() {
+    public Viewer<InstructionsMenu> getViewer() {
         return new InstructionsMenuViewer(getModel());
     }
 
     @Override
-    protected Controller<InstructionsMenu> getController() {
+    public Controller<InstructionsMenu> getController() {
         return new InstructionsMenuController(getModel());
     }
 }

@@ -1,7 +1,7 @@
 package com.gr02.BomberMania.model.game.elements;
 
 import com.gr02.BomberMania.model.Position;
-import com.gr02.BomberMania.viewer.game.ElementViewer;
+import com.gr02.BomberMania.viewer.ElementViewer;
 
 public abstract class Element {
 

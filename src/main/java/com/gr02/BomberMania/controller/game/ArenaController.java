@@ -7,12 +7,11 @@ import com.gr02.BomberMania.model.game.arena.Arena;
 import java.io.IOException;
 
 public class ArenaController extends GameController {
-    private final Player1Controller player1;
-    private final Player2Controller player2;
-    private final BombController bomb;
-    private final FlameController flame;
-
-    private final TimerController timer;
+    private Player1Controller player1;
+    private Player2Controller player2;
+    private BombController bomb;
+    private FlameController flame;
+    private TimerController timer;
 
     public ArenaController(Arena arena) {
         super(arena);
@@ -33,5 +32,25 @@ public class ArenaController extends GameController {
         flame.step(game, action, time);
         timer.step(game, action, time);
 
+    }
+
+    public void setPlayer1(Player1Controller player1) {
+        this.player1 = player1;
+    }
+
+    public void setPlayer2(Player2Controller player2) {
+        this.player2 = player2;
+    }
+
+    public void setBomb(BombController bomb) {
+        this.bomb = bomb;
+    }
+
+    public void setFlame(FlameController flame) {
+        this.flame = flame;
+    }
+
+    public void setTimer(TimerController timer) {
+        this.timer = timer;
     }
 }

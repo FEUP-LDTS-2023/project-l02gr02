@@ -1,43 +1,36 @@
 package com.gr02.BomberMania.model.menu;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainMenuTest {
-
     @Test
-    public void nextEntry() {
+    void selectOptionTest() {
         MainMenu menu = new MainMenu();
-        Assertions.assertEquals(0, menu.getCurrentEntry());
+        assertEquals(true, menu.isSelectedStart());
+        assertEquals(false, menu.isSelectedInstruction());
+        assertEquals(false, menu.isSelectedMuteMusic());
+        assertEquals(false, menu.isSelectedExit());
         menu.nextEntry();
-        Assertions.assertEquals(1, menu.getCurrentEntry());
+        assertEquals(false, menu.isSelectedStart());
+        assertEquals(true, menu.isSelectedInstruction());
+        assertEquals(false, menu.isSelectedMuteMusic());
+        assertEquals(false, menu.isSelectedExit());
         menu.nextEntry();
-        Assertions.assertEquals(2, menu.getCurrentEntry());
-
-        for (int k = 0; k < menu.getNumberEntries(); k++) {
-            menu.nextEntry();
-        }
-        Assertions.assertEquals(2, menu.getCurrentEntry());
-    }
-
-    @Test
-    public void previousEntry() {
-        MainMenu menu = new MainMenu();
-        Assertions.assertEquals(0, menu.getCurrentEntry());
-        menu.previousEntry();
-        Assertions.assertEquals(3, menu.getCurrentEntry());
-        menu.previousEntry();
-        Assertions.assertEquals(2, menu.getCurrentEntry());
-
-        for (int k = 0; k < menu.getNumberEntries(); k++) {
-            menu.previousEntry();
-        }
-        Assertions.assertEquals(2, menu.getCurrentEntry());
+        assertEquals(false, menu.isSelectedStart());
+        assertEquals(false, menu.isSelectedInstruction());
+        assertEquals(true, menu.isSelectedMuteMusic());
+        assertEquals(false, menu.isSelectedExit());
+        menu.nextEntry();
+        assertEquals(false, menu.isSelectedStart());
+        assertEquals(false, menu.isSelectedInstruction());
+        assertEquals(false, menu.isSelectedMuteMusic());
+        assertEquals(true, menu.isSelectedExit());
+        menu.nextEntry();
+        assertEquals(true, menu.isSelectedStart());
+        assertEquals(false, menu.isSelectedInstruction());
+        assertEquals(false, menu.isSelectedMuteMusic());
+        assertEquals(false, menu.isSelectedExit());
     }
 }
-
-

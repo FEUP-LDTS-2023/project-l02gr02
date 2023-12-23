@@ -29,6 +29,7 @@ public class BombInfo implements Cloneable, Timed {
 
     @Override
     public void reduceTimer() { timer--;}
+
     public int getExplosionRadius() {
         return explosionRadius;
     }
