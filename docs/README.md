@@ -150,6 +150,14 @@ The class diagram below illustrates how the Command pattern was integrated into 
 
 ![img](imgs/commandPattern.png)
 
+These classes can be found in the following files:
+- [PowerUp](../src/main/java/com/gr02/BomberMania/model/game/powerUps/PowerUp.java)
+- [DetonateBomb](../src/main/java/com/gr02/BomberMania/model/game/powerUps/DetonateBomb.java)
+- [PushBomb](../src/main/java/com/gr02/BomberMania/model/game/powerUps/PushBomb.java)
+- [DecreaseTimer](../src/main/java/com/gr02/BomberMania/model/game/powerUps/DecreaseTimer.java)
+- [IncreaseExplosionRadius](../src/main/java/com/gr02/BomberMania/model/game/powerUps/IncreaseExplosionRadius.java)
+- [AddBomb](../src/main/java/com/gr02/BomberMania/model/game/powerUps/AddBomb.java)
+
 **Consequences**
 
 Adopting the Command Pattern in our power-up design provides the following benefits:
@@ -173,6 +181,11 @@ To address this issue and promote a loosely coupled design, we introduced the Ob
 The class diagram below illustrates how the Observer pattern was applied to enhance the detonation mechanism.
 
 ![img](imgs/observerPattern.png)
+
+These classes can be found in the following files:
+- [PlayableCharacter](../src/main/java/com/gr02/BomberMania/model/game/elements/PlayableCharacter.java)
+- [DetonatorObserver](../src/main/java/com/gr02/BomberMania/model/game/elements/DetonatorObserver.java)
+- [Bomb](../src/main/java/com/gr02/BomberMania/model/game/elements/Bomb.java)
 
 **Consequences**
 
