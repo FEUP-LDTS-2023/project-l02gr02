@@ -1,6 +1,6 @@
 ## LDTS_T02_G02 - BomberMania
 
-BomberMania is a thrilling 2-player game where the goal is to outsmart and blast your friends with bombs for victory. Unleash superpowers to upgrade your bombs, adding an extra layer of strategy to the explosive mayhem
+BomberMania is a thrilling 2-player game where the goal is to outsmart and blast your friends with bombs for victory. Unleash superpowers to upgrade your bombs, adding an extra layer of strategy to the explosive mayhem!
 
 > This project was made by Afonso Machado (up202207611@up.pt), Guilherme Coelho (up202000141@up.pt) and Luís Arruda (up202206970@up.pt) for LDTS 2023/2024
 
@@ -20,22 +20,20 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 ![img](imgs/instructionMenu.png)
 
 #### Map Menu
+- Select Map - Allows the player to choose between multiple maps.
 
 ![img](imgs/MapMenu.png)
 
 #### In Game
-
-- Placing bombs - The player can place bombs in the arena.
-- Death for bomb explosion - If caught by the fire trail, the player automatically get killed.
-- Breaking wall with bombs (explosion trail stops in unbreakable walls)
-- 2-Player Mode - Engage in a head-to-head gameplay with a friend.
-- Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
-- Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact.
-- Chain Reaction Bomb - Immediately explodes a nearly bomb
-- Directional Explosion Bomb - Explodes in the same direction it is placed.
-- Select map - Allows the player to choose between multiple maps.
-- Collision - Ensures the player cannot pass through undesired elements within the game environment.
 - Movement - Allows the player to move the hero character.
+- Collision - Ensures the player cannot pass through undesired elements within the game environment.
+- Placing bombs - The player can place bombs in the arena.
+- Death by bomb explosion - If caught by the fire trail, the player will automatically be killed.
+- Breakable walls - Fragile walls will be destroyed if hit by the fire trail of an explosion (explosion trail stops in unbreakable walls).
+- 2-Player Mode - Engage in a head-to-head gameplay with a friend.
+- Chain Reaction Bomb - Immediately explodes any bomb caught in the blast radius of an explosion.
+- Push Bomb - Strategically shove bombs to trap and outmaneuver opponents.
+- Mega Explosion Bomb - Unleash a colossal explosion radius for maximum impact by collecting upgrades that increase a bomb's radius.
 
 ##### Visualiser
 
@@ -55,8 +53,10 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 
 ### PLANNED FEATURES
 
+The following features were not implemented as they weren't of substantial importance to the final product.
+
 - Portal - Transports the hero and triggered bombs to another location.
-- Health - The player's hit points, enables the player to take damage, and on reaching 0, finishes the game.
+- Shield - Enables the player to take one more hit than normal, however on a second hit the player is killed and the game ends.
 
 ### DESIGN
 
@@ -193,9 +193,15 @@ The approach emphasized Property Based Testing, systematically validating functi
 Additionally, Mocks were strategically used in draw methods to confirm executions. 
 This focused strategy aimed to deliver a robust test suite, showcasing the team's commitment to thorough validation and ensuring the resilience of the codebase.
 
-### Screenshot of coverage report
+### Coverage report
 
 ![img](imgs/coverage.png)
+
+### Mutation Testing Report
+
+[Mutation Tests](/pitest/202312231946/index.html)
+
+![img](imgs/pitest.png)
 
 ### SELF-EVALUATION
 
