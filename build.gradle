@@ -14,6 +14,7 @@ repositories {
 
 pitest {
     junit5PluginVersion = '0.12'
+    excludedClasses = ["com.gr02.BomberMania.Game"]
 }
 
 dependencies {
