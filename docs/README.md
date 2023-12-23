@@ -9,9 +9,19 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 #### Main Menu
 - Start Game - Allows the player to start the game.
 - Instructions - Shows the player the instructions of the game, such as movements keys, placing bombs and using some of the powerups.
+- Mute Music - Turn off music sound.
 - Exit - Closes the game.
 
 ![img](gifs/menu.gif)
+
+#### Instructions Menu
+- Go Back - Enables the user to navigate back to the main menu.
+
+![img](imgs/instructionMenu.png)
+
+#### Map Menu
+
+![img](imgs/MapMenu.png)
 
 #### In Game
 
@@ -26,6 +36,22 @@ BomberMania is a thrilling 2-player game where the goal is to outsmart and blast
 - Select map - Allows the player to choose between multiple maps.
 - Collision - Ensures the player cannot pass through undesired elements within the game environment.
 - Movement - Allows the player to move the hero character.
+
+##### Visualiser
+
+![img](gifs/Visualiser.gif)
+
+##### Push Bombs
+
+![img](gifs/pushBomb.gif)
+
+##### Detonate Bombs
+
+![img](gifs/detonateBomb.gif)
+
+#### Death for bomb explosion
+
+![img](gifs/death.gif)
 
 ### PLANNED FEATURES
 
@@ -122,6 +148,8 @@ To address the inconsistency in power-up functionality while adhering to the Ope
 
 The class diagram below illustrates how the Command pattern was integrated into our power-up system.
 
+![img](imgs/commandPattern.png)
+
 **Consequences**
 
 Adopting the Command Pattern in our power-up design provides the following benefits:
@@ -143,6 +171,8 @@ To address this issue and promote a loosely coupled design, we introduced the Ob
 **Implementation**
 
 The class diagram below illustrates how the Observer pattern was applied to enhance the detonation mechanism.
+
+![img](imgs/observerPattern.png)
 
 **Consequences**
 
