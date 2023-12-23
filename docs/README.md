@@ -199,7 +199,7 @@ This focused strategy aimed to deliver a robust test suite, showcasing the team'
 
 ### Mutation Testing Report
 
-[Mutation Tests](/pitest/202312231946/index.html)
+[Mutation Tests](pitest/202312231946/index.html)
 
 ![img](imgs/pitest.png)
 
